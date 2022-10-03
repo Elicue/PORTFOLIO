@@ -106,7 +106,7 @@ main {
 
             .content {
                 border-left: color(noir) $border-height solid;
-                padding: 10px 0 10px 20px;
+                padding: 10px 0 10px 10px;
                 width: 100%;
 
                 p {
@@ -122,6 +122,7 @@ main {
                     border: none;
                     color: #fff;
                     padding: 0.5rem 1rem;
+                    cursor: pointer;
                 }
             }
         }
@@ -172,18 +173,18 @@ main {
 
                         .titre {
                             h3 {
-                                font-size: 10px;
+                                font-size: 12px;
                             }
 
                             p {
-                                font-size:  8px;
+                                font-size:  10px;
                                 color: grey;
                             }
                         }
 
                         .desc {
                             align-items: center;
-                            margin-top: 12px;
+                            margin-top: 10px;
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
@@ -203,6 +204,7 @@ main {
                                     width: 12px;
                                     height: 10px;
                                     padding: 0.2rem 0.2rem;
+                                    cursor: pointer;
                                 }
                             }
                         }
@@ -221,13 +223,13 @@ main {
                         display: flex;
                         flex-direction: column;
                         p {
-                            font-size: 8px;
+                            font-size: 10px;
                             color: grey;
                             margin-top: -5px;
                         }
 
                         h1 {
-                            font-size: 10px;
+                            font-size: 12px;
                             text-transform: uppercase;
                             margin-top: 5px;
                         }
@@ -244,10 +246,12 @@ main {
                             color: #fff;
                             font-size: 12px;
                             padding: 0.2rem 0.5rem;
+                            cursor: pointer;
                         }
                     }
                 }
             }
         }
     }
+
 }

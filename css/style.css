@@ -88,7 +88,7 @@ main .haut .left .titre h3 {
 }
 main .haut .left .content {
   border-left: #191919 1px solid;
-  padding: 10px 0 10px 20px;
+  padding: 10px 0 10px 10px;
   width: 100%;
 }
 main .haut .left .content p {
@@ -103,6 +103,7 @@ main .haut .left .cta button {
   border: none;
   color: #fff;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 main .haut .right {
   width: 60%;
@@ -148,15 +149,15 @@ main .haut .right .card .pic .flou {
   padding: 5px;
 }
 main .haut .right .card .pic .flou .titre h3 {
-  font-size: 10px;
+  font-size: 12px;
 }
 main .haut .right .card .pic .flou .titre p {
-  font-size: 8px;
+  font-size: 10px;
   color: grey;
 }
 main .haut .right .card .pic .flou .desc {
   align-items: center;
-  margin-top: 12px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -175,6 +176,7 @@ main .haut .right .card .pic .flou .desc button ion-icon {
   width: 12px;
   height: 10px;
   padding: 0.2rem 0.2rem;
+  cursor: pointer;
 }
 main .haut .right .card .bas {
   width: 90%;
@@ -189,12 +191,12 @@ main .haut .right .card .bas .gauche {
   flex-direction: column;
 }
 main .haut .right .card .bas .gauche p {
-  font-size: 8px;
+  font-size: 10px;
   color: grey;
   margin-top: -5px;
 }
 main .haut .right .card .bas .gauche h1 {
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   margin-top: 5px;
 }
@@ -209,4 +211,5 @@ main .haut .right .card .bas .cta button {
   color: #fff;
   font-size: 12px;
   padding: 0.2rem 0.5rem;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
