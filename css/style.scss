@@ -20,6 +20,9 @@ $border-height : 1px;
 header {
     top: 0px;
     position: sticky;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    z-index: 10;
 
     .content {
         align-items: center;
@@ -385,4 +388,6 @@ main {
             }
         }
     }
+
+    
 }
