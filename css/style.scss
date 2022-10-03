@@ -389,5 +389,79 @@ main {
         }
     }
 
-    
+    .bas {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+        border-bottom: $border-height color(noir) solid;
+
+        .titre {
+            width: 100%;
+
+            h1 {
+                font-size: 30px;
+                text-transform: uppercase;
+            }
+        }
+
+        .content {
+            display: flex;
+            width: 90%;
+            margin-top: 10px;
+
+            p {
+                color:  grey;
+                font-size: 15px;
+            }
+        }
+
+        .bas {
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 100px;
+
+            .cta {
+                display: flex;
+                width: 50%;
+                justify-content: space-between;
+
+                button {
+                    border: none;
+                    font-size: 12px;
+                    padding: 0.5rem 1.5rem;
+                    cursor: pointer;
+                    justify-content: left;
+                }
+
+                button:nth-child(1) {
+                    background-color: color(noir);
+                    color: #fff;
+                }
+
+                button:nth-child(2) {
+                    background-color: #fff;
+                    color: color(noir);
+                    border: color(noir) $border-height solid;
+                }
+            }
+
+            .scroll {
+                width: 45%;
+                display: flex;
+                justify-content: end;
+
+                ion-icon {
+                    width: 30px;
+                    height: 30px;
+                    border: $border-height color(noir) solid;
+                    border-radius: 50%;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
 }

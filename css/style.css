@@ -328,4 +328,68 @@ main .centre .right .content p {
   text-align: right;
   color: grey;
   font-size: 15px;
+}
+main .bas {
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  border-bottom: 1px #191919 solid;
+}
+main .bas .titre {
+  width: 100%;
+}
+main .bas .titre h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+main .bas .content {
+  display: flex;
+  width: 90%;
+  margin-top: 10px;
+}
+main .bas .content p {
+  color: grey;
+  font-size: 15px;
+}
+main .bas .bas {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 100px;
+}
+main .bas .bas .cta {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+main .bas .bas .cta button {
+  border: none;
+  font-size: 12px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  justify-content: left;
+}
+main .bas .bas .cta button:nth-child(1) {
+  background-color: #191919;
+  color: #fff;
+}
+main .bas .bas .cta button:nth-child(2) {
+  background-color: #fff;
+  color: #191919;
+  border: #191919 1px solid;
+}
+main .bas .bas .scroll {
+  width: 45%;
+  display: flex;
+  justify-content: end;
+}
+main .bas .bas .scroll ion-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px #191919 solid;
+  border-radius: 50%;
+  padding: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
