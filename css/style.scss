@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+$colors :(
+    noir:#191919,
+);
+
+$border-height : 1px;
+
+@function color($color-name){
+    @return map-get($colors, $color-name)
+}
+
+header {
+    top: 0px;
+    position: sticky;
+
+    .content {
+        align-items: center;
+        margin: auto;
+        height: 60px;
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(255, 255, 255, 0.5);
+
+        .logo {
+            width: 20%;
+            img {
+                height: 47px;
+                width: 36px;
+            }
+        }
+
+        .page {
+            display: flex;
+            align-items: center;
+            width: 45%;
+            span {
+                height: $border-height;
+                width: 20px;
+                background-color: color(noir);
+                border-radius: 5px;
+            }
+
+            h1 {
+                margin: 0 8px;
+                font-size: 15px;
+                text-transform: uppercase;
+            }
+        }
+
+        .menu {
+            width: 35%;
+            display: flex;
+            justify-content: space-around;
+            ion-icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+
+    .border {
+        display: flex;
+        height: $border-height;
+        width: 90%;
+        margin: auto;
+        background-color: color(noir);
+    }
+}
+
+main {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .haut {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+
+        .left {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+
+            .titre {
+
+                h3 {
+                    font-size: 40px;
+                    text-transform: uppercase;
+                    position: absolute;
+                    background-color: #fff;
+                }
+                margin-bottom: 120px;
+            }
+
+            .content {
+                border-left: color(noir) $border-height solid;
+                padding: 10px 0 10px 20px;
+                width: 100%;
+
+                p {
+                    font-size: 15px;
+                    color: grey;
+                }
+            }
+
+            .cta {
+                margin-top: 20px;
+                button {
+                    background-color: color(noir);
+                    border: none;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
+
+        .right {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+
+            .logo {
+                position: absolute;
+                width: 105px;
+                margin-left: 160px;
+                margin-top: -20px;
+                background-color: #fff;
+                border: 8px solid #fff;
+                border-radius: 50%;
+                transform: rotate(15deg);
+            }
+
+            .card {
+                display: flex;
+                flex-direction:column;
+                margin-top: 30px;
+                width: 250px;
+                border: 1px solid color(noir);
+
+                .pic {
+                    width: 90%;
+                    margin: auto;
+                    margin-top: 70px;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .flou {
+                        display: flex;
+                        flex-direction: column;
+                        backdrop-filter: blur(10px);
+                        height: 60px;
+                        width: 45%;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        position: absolute;
+                        margin: -80px 0 0 15px;
+                        padding: 5px;
+
+                        .titre {
+                            h3 {
+                                font-size: 10px;
+                            }
+
+                            p {
+                                font-size:  8px;
+                                color: grey;
+                            }
+                        }
+
+                        .desc {
+                            align-items: center;
+                            margin-top: 12px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                            h3 {
+                                font-size: 10px;
+                            }
+
+                            button {
+                                background-color: color(noir);
+                                border: none;
+
+                                ion-icon {
+                                    display: flex;
+                                    align-items: center;
+                                    color: #fff;
+                                    width: 12px;
+                                    height: 10px;
+                                    padding: 0.2rem 0.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .bas {
+                    width: 90%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 10px;
+
+                    .gauche {
+                        width: 75%;
+                        display: flex;
+                        flex-direction: column;
+                        p {
+                            font-size: 8px;
+                            color: grey;
+                            margin-top: -5px;
+                        }
+
+                        h1 {
+                            font-size: 10px;
+                            text-transform: uppercase;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    .cta {
+                        display: flex;
+                        width: 25%;
+                        justify-content: end;
+                        
+                        button {
+                            background-color: color(noir);
+                            border: none;
+                            color: #fff;
+                            font-size: 12px;
+                            padding: 0.2rem 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
