@@ -88,6 +88,13 @@ main .haut .left {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 300px) {
+  main .haut .left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+}
 main .haut .left .titre {
   margin-bottom: 120px;
 }
@@ -97,14 +104,40 @@ main .haut .left .titre h3 {
   position: absolute;
   background-color: #fff;
 }
+@media (min-width: 300px) {
+  main .haut .left .titre h3 {
+    font-size: 100px;
+  }
+}
 main .haut .left .content {
   border-left: #191919 1px solid;
   padding: 10px 0 10px 10px;
   width: 100%;
 }
+@media (min-width: 300px) {
+  main .haut .left .content {
+    margin-top: 150px;
+    width: 75%;
+    margin-bottom: 50px;
+  }
+}
 main .haut .left .content p {
   font-size: 15px;
   color: grey;
+}
+main .haut .left .content p span {
+  display: none;
+}
+@media (min-width: 300px) {
+  main .haut .left .content p span {
+    display: block;
+    line-height: 50px;
+  }
+}
+@media (min-width: 300px) {
+  main .haut .left .content p {
+    font-size: 20px;
+  }
 }
 main .haut .left .cta {
   margin-top: 20px;
@@ -116,11 +149,38 @@ main .haut .left .cta button {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+@media (min-width: 300px) {
+  main .haut .left .cta button {
+    font-size: 30px;
+  }
+}
+main .haut .left .scroll {
+  display: none;
+}
+@media (min-width: 300px) {
+  main .haut .left .scroll {
+    display: block;
+    display: flex;
+    justify-content: end;
+  }
+  main .haut .left .scroll ion-icon {
+    width: 30px;
+    height: 30px;
+    border: 1px #191919 solid;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+}
 main .haut .right {
   width: 60%;
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 300px) {
+  main .haut .right {
+    width: 40%;
+  }
 }
 main .haut .right .logo {
   position: absolute;
@@ -132,12 +192,27 @@ main .haut .right .logo {
   border-radius: 50%;
   transform: rotate(15deg);
 }
+@media (min-width: 300px) {
+  main .haut .right .logo {
+    width: 200px;
+    margin-left: -100px;
+    margin-top: 100px;
+    background-color: transparent;
+    border: none;
+    transform: rotate(-15deg);
+  }
+}
 main .haut .right .card {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   width: 250px;
   border: 1px solid #191919;
+}
+@media (min-width: 300px) {
+  main .haut .right .card {
+    width: 500px;
+  }
 }
 main .haut .right .card .pic {
   width: 90%;
@@ -159,12 +234,29 @@ main .haut .right .card .pic .flou {
   margin: -80px 0 0 15px;
   padding: 5px;
 }
+@media (min-width: 300px) {
+  main .haut .right .card .pic .flou {
+    width: 25%;
+    height: 120px;
+    margin: -150px 0 0 28px;
+  }
+}
 main .haut .right .card .pic .flou .titre h3 {
   font-size: 12px;
+}
+@media (min-width: 300px) {
+  main .haut .right .card .pic .flou .titre h3 {
+    font-size: 30px;
+  }
 }
 main .haut .right .card .pic .flou .titre p {
   font-size: 10px;
   color: grey;
+}
+@media (min-width: 300px) {
+  main .haut .right .card .pic .flou .titre p {
+    font-size: 20px;
+  }
 }
 main .haut .right .card .pic .flou .desc {
   align-items: center;
@@ -173,8 +265,19 @@ main .haut .right .card .pic .flou .desc {
   flex-direction: row;
   justify-content: space-between;
 }
+@media (min-width: 300px) {
+  main .haut .right .card .pic .flou .desc {
+    margin-top: 15px;
+  }
+}
 main .haut .right .card .pic .flou .desc h3 {
   font-size: 10px;
+}
+@media (min-width: 300px) {
+  main .haut .right .card .pic .flou .desc h3 {
+    font-size: 25px;
+    margin-top: 5px;
+  }
 }
 main .haut .right .card .pic .flou .desc button {
   background-color: #191919;
@@ -189,12 +292,25 @@ main .haut .right .card .pic .flou .desc button ion-icon {
   padding: 0.2rem 0.2rem;
   cursor: pointer;
 }
+@media (min-width: 300px) {
+  main .haut .right .card .pic .flou .desc button ion-icon {
+    width: 30px;
+    height: 25px;
+  }
+}
 main .haut .right .card .bas {
   width: 90%;
   margin: auto;
   display: flex;
   flex-direction: row;
   margin: 10px;
+}
+@media (min-width: 300px) {
+  main .haut .right .card .bas {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 main .haut .right .card .bas .gauche {
   width: 75%;
@@ -206,10 +322,21 @@ main .haut .right .card .bas .gauche p {
   color: grey;
   margin-top: -5px;
 }
+@media (min-width: 300px) {
+  main .haut .right .card .bas .gauche p {
+    font-size: 20px;
+  }
+}
 main .haut .right .card .bas .gauche h1 {
   font-size: 12px;
   text-transform: uppercase;
   margin-top: 5px;
+}
+@media (min-width: 300px) {
+  main .haut .right .card .bas .gauche h1 {
+    font-size: 25px;
+    margin-top: 10px;
+  }
 }
 main .haut .right .card .bas .cta {
   display: flex;
@@ -223,6 +350,12 @@ main .haut .right .card .bas .cta button {
   font-size: 12px;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
+}
+@media (min-width: 300px) {
+  main .haut .right .card .bas .cta button {
+    font-size: 20px;
+    padding: 1rem 2rem;
+  }
 }
 main .centre {
   width: 90%;
@@ -401,6 +534,11 @@ main .bas .bas .scroll ion-icon {
   border: 1px #191919 solid;
   border-radius: 50%;
   padding: 0.5rem;
+}
+@media (min-width: 300px) {
+  main .bas .bas .scroll {
+    display: none;
+  }
 }
 main .scroll {
   display: none;
