@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  color: color(noir);
 }
 
 header {
@@ -333,7 +334,6 @@ main .bas {
   width: 90%;
   margin: auto;
   margin-top: 50px;
-  border-bottom: 1px #191919 solid;
 }
 main .bas .titre {
   width: 100%;

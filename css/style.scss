@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: color(noir);
 }
 
 $colors :(
@@ -393,7 +394,7 @@ main {
         width: 90%;
         margin: auto;
         margin-top: 50px;
-        border-bottom: $border-height color(noir) solid;
+        // border-bottom: $border-height color(noir) solid;
 
         .titre {
             width: 100%;
