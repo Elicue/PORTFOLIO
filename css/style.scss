@@ -101,6 +101,11 @@ main {
         display: flex;
         flex-direction: row;
 
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+
         .left {
             width: 30%;
             display: flex;
@@ -273,6 +278,10 @@ main {
         margin-top: 50px;
         display: flex;
         flex-direction: row;
+
+        .gauche {
+            display: none;
+        }
 
         .left {
             width: 45%;
@@ -473,6 +482,10 @@ main {
                 }
             }
         }
+    }
+
+    .scroll {
+        display: none;
     }
 }
 
