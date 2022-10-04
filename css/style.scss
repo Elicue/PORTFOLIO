@@ -18,7 +18,7 @@ $border-height : 1px;
     @return map-get($colors, $color-name)
 }
 
-$desktop :300px;
+$desktop :800px;
 
 @mixin desktop {
     @media (min-width : #{$desktop}){
@@ -45,16 +45,32 @@ header {
 
         .logo {
             width: 20%;
+
+            @include desktop {
+                width: 42%;
+            }
+
             img {
                 height: 47px;
                 width: 36px;
+
+                @include desktop {
+                    width: 56px;
+                    height: 69px;
+                }
             }
+
         }
 
         .page {
             display: flex;
             align-items: center;
             width: 45%;
+
+            @include desktop {
+                width: 35%;
+            }
+
             span {
                 height: $border-height;
                 width: 20px;
@@ -62,10 +78,15 @@ header {
                 border-radius: 5px;
             }
 
-            h1 {
+            p {
                 margin: 0 8px;
                 font-size: 15px;
                 text-transform: uppercase;
+
+                @include desktop {
+                    font-size: 20px;
+                    margin: 0 15px;
+                }
             }
         }
 
@@ -73,9 +94,19 @@ header {
             width: 35%;
             display: flex;
             justify-content: space-around;
+
+            @include desktop {
+                width: 20%;
+            }
+
             ion-icon {
                 width: 26px;
                 height: 26px;
+
+                @include desktop {
+                    height: 37px;
+                    width: 35px;
+                }
             }
         }
     }
@@ -142,6 +173,8 @@ main {
                     margin-top: 150px;
                     width: 75%;
                     margin-bottom: 50px;
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 p {
@@ -175,6 +208,7 @@ main {
 
                     @include desktop{
                         font-size: 30px;
+                        text-transform: uppercase;
                     }
                 }
             }
@@ -185,17 +219,23 @@ main {
                 @include desktop {
                     display: block;
                     display: flex;
-                    justify-content: end;
-    
-                    ion-icon {
-                        width: 30px;
-                        height: 30px;
-                        border: $border-height color(noir) solid;
-                        border-radius: 50%;
-                        padding: 0.5rem;
-                    }
-    
+                    justify-content: start;
+                    margin-top: 50px;
                 }
+    
+                ion-icon {
+                    width: 30px;
+                    height: 30px;
+                    border: $border-height color(noir) solid;
+                    border-radius: 50%;
+                    padding: 0.5rem;
+
+                    @include desktop {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+    
             }
         }
 
@@ -209,23 +249,68 @@ main {
                 width: 40%;
             }
 
-            .logo {
-                position: absolute;
-                width: 105px;
-                margin-left: 160px;
-                margin-top: -20px;
-                background-color: #fff;
-                border: 8px solid #fff;
-                border-radius: 50%;
-                transform: rotate(15deg);
+            .logo{
+                display: flex;
+                position: relative;
+                margin-bottom: 30px;
+                margin-left: 40px;
+                width: 100%;
+
+                img:nth-child(1) {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    width: 50%;
+                    z-index: 5;
+                    transform: rotate(15deg);
+                }
+
+                img:nth-child(2) {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    width: 50%;
+                    background-color: #fff;
+                    border: 8px solid #fff;
+                    border-radius: 50%;
+                    animation: spin 10s linear infinite
+                }
 
                 @include desktop {
-                    width: 200px;
-                    margin-left: -100px;
-                    margin-top: 100px;
-                    background-color: transparent;
-                    border: none;
-                    transform: rotate(-15deg);
+                    display: flex;
+                    position: relative;
+                    margin-left: -450px;
+                    margin-bottom: -50px;
+                    width: 100%;
+
+
+                    img:nth-child(1) {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        width: 40%;  
+                        transform: rotate(-15deg);
+                    }
+
+                    img:nth-child(2) {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        width: 40%;
+                        animation: spin 10s linear infinite;
+                        background-color: transparent;
+                        border: none;
+                    }
+                }
+            }
+
+            @keyframes spin{
+                0%{
+                    transform: rotate(0);
+                }
+            
+                100%{
+                    transform: rotate(360deg);
                 }
             }
 
@@ -265,6 +350,7 @@ main {
                             width: 25%;
                             height: 120px;
                             margin: -150px 0 0 28px;
+                            padding: 10px;
                         }
 
                         .titre {
@@ -272,7 +358,7 @@ main {
                                 font-size: 12px;
 
                                 @include desktop{
-                                    font-size: 30px;
+                                    font-size: 20px;
                                 }
                             }
 
@@ -281,7 +367,7 @@ main {
                                 color: grey;
                                 
                                 @include desktop{
-                                    font-size: 20px;
+                                    font-size: 15px;
                                 }
                             }
                         }
@@ -301,8 +387,8 @@ main {
                                 font-size: 10px;
 
                                 @include desktop{
-                                    font-size: 25px;
-                                    margin-top: 5px;
+                                    font-size: 15px;
+                                    margin-top: 25px;
                                 }
                             }
 
@@ -310,6 +396,11 @@ main {
                             button {
                                 background-color: color(noir);
                                 border: none;
+
+                                @include desktop {
+                                    margin-top: 10px;
+                                    margin-right: 5px;
+                                }
 
                                 ion-icon {
                                     display: flex;
@@ -384,7 +475,7 @@ main {
 
                             @include desktop{
                                 font-size: 20px;
-                                padding: 1rem 2rem;
+                                padding: 0.5rem 1.5rem;
                             }
                         }
                     }
@@ -609,8 +700,28 @@ main {
         }
     }
 
-    .scroll {
+    .prog {
         display: none;
+
+        @include desktop {
+            display: block;
+            width: 15px;
+            position: fixed;
+            right: 30px;
+        }
+
+        .barre {
+            border: $border-height color(noir) solid;
+            height: 600px;
+            border-radius: 50px;
+
+            span {
+                height: 200px;
+                background-color:  lightgrey;
+                display: block;
+                border-radius: 50px 50px 0 0;
+            }
+        }
     }
 }
 

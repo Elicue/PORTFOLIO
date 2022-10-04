@@ -28,14 +28,30 @@ header .content {
 header .content .logo {
   width: 20%;
 }
+@media (min-width: 800px) {
+  header .content .logo {
+    width: 42%;
+  }
+}
 header .content .logo img {
   height: 47px;
   width: 36px;
+}
+@media (min-width: 800px) {
+  header .content .logo img {
+    width: 56px;
+    height: 69px;
+  }
 }
 header .content .page {
   display: flex;
   align-items: center;
   width: 45%;
+}
+@media (min-width: 800px) {
+  header .content .page {
+    width: 35%;
+  }
 }
 header .content .page span {
   height: 1px;
@@ -43,19 +59,36 @@ header .content .page span {
   background-color: #191919;
   border-radius: 5px;
 }
-header .content .page h1 {
+header .content .page p {
   margin: 0 8px;
   font-size: 15px;
   text-transform: uppercase;
+}
+@media (min-width: 800px) {
+  header .content .page p {
+    font-size: 20px;
+    margin: 0 15px;
+  }
 }
 header .content .menu {
   width: 35%;
   display: flex;
   justify-content: space-around;
 }
+@media (min-width: 800px) {
+  header .content .menu {
+    width: 20%;
+  }
+}
 header .content .menu ion-icon {
   width: 26px;
   height: 26px;
+}
+@media (min-width: 800px) {
+  header .content .menu ion-icon {
+    height: 37px;
+    width: 35px;
+  }
 }
 header .border {
   display: flex;
@@ -77,7 +110,7 @@ main .haut {
   display: flex;
   flex-direction: row;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut {
     display: flex;
     flex-direction: row;
@@ -88,7 +121,7 @@ main .haut .left {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left {
     width: 60%;
     display: flex;
@@ -104,7 +137,7 @@ main .haut .left .titre h3 {
   position: absolute;
   background-color: #fff;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left .titre h3 {
     font-size: 100px;
   }
@@ -114,11 +147,13 @@ main .haut .left .content {
   padding: 10px 0 10px 10px;
   width: 100%;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left .content {
     margin-top: 150px;
     width: 75%;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
   }
 }
 main .haut .left .content p {
@@ -128,13 +163,13 @@ main .haut .left .content p {
 main .haut .left .content p span {
   display: none;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left .content p span {
     display: block;
     line-height: 50px;
   }
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left .content p {
     font-size: 20px;
   }
@@ -149,26 +184,34 @@ main .haut .left .cta button {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left .cta button {
     font-size: 30px;
+    text-transform: uppercase;
   }
 }
 main .haut .left .scroll {
   display: none;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .left .scroll {
     display: block;
     display: flex;
-    justify-content: end;
+    justify-content: start;
+    margin-top: 50px;
   }
+}
+main .haut .left .scroll ion-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px #191919 solid;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+@media (min-width: 800px) {
   main .haut .left .scroll ion-icon {
-    width: 30px;
-    height: 30px;
-    border: 1px #191919 solid;
-    border-radius: 50%;
-    padding: 0.5rem;
+    width: 60px;
+    height: 60px;
   }
 }
 main .haut .right {
@@ -177,29 +220,77 @@ main .haut .right {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right {
     width: 40%;
   }
 }
 main .haut .right .logo {
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+  margin-left: 40px;
+  width: 100%;
+}
+main .haut .right .logo img:nth-child(1) {
   position: absolute;
-  width: 105px;
-  margin-left: 160px;
-  margin-top: -20px;
+  top: 0px;
+  right: 0px;
+  width: 50%;
+  z-index: 5;
+  transform: rotate(15deg);
+}
+main .haut .right .logo img:nth-child(2) {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 50%;
   background-color: #fff;
   border: 8px solid #fff;
   border-radius: 50%;
-  transform: rotate(15deg);
+  -webkit-animation: spin 10s linear infinite;
+          animation: spin 10s linear infinite;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .logo {
-    width: 200px;
-    margin-left: -100px;
-    margin-top: 100px;
+    display: flex;
+    position: relative;
+    margin-left: -450px;
+    margin-bottom: -50px;
+    width: 100%;
+  }
+  main .haut .right .logo img:nth-child(1) {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 40%;
+    transform: rotate(-15deg);
+  }
+  main .haut .right .logo img:nth-child(2) {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 40%;
+    -webkit-animation: spin 10s linear infinite;
+            animation: spin 10s linear infinite;
     background-color: transparent;
     border: none;
-    transform: rotate(-15deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 main .haut .right .card {
@@ -209,7 +300,7 @@ main .haut .right .card {
   width: 250px;
   border: 1px solid #191919;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card {
     width: 500px;
   }
@@ -234,28 +325,29 @@ main .haut .right .card .pic .flou {
   margin: -80px 0 0 15px;
   padding: 5px;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .pic .flou {
     width: 25%;
     height: 120px;
     margin: -150px 0 0 28px;
+    padding: 10px;
   }
 }
 main .haut .right .card .pic .flou .titre h3 {
   font-size: 12px;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .pic .flou .titre h3 {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 main .haut .right .card .pic .flou .titre p {
   font-size: 10px;
   color: grey;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .pic .flou .titre p {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 main .haut .right .card .pic .flou .desc {
@@ -265,7 +357,7 @@ main .haut .right .card .pic .flou .desc {
   flex-direction: row;
   justify-content: space-between;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .pic .flou .desc {
     margin-top: 15px;
   }
@@ -273,15 +365,21 @@ main .haut .right .card .pic .flou .desc {
 main .haut .right .card .pic .flou .desc h3 {
   font-size: 10px;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .pic .flou .desc h3 {
-    font-size: 25px;
-    margin-top: 5px;
+    font-size: 15px;
+    margin-top: 25px;
   }
 }
 main .haut .right .card .pic .flou .desc button {
   background-color: #191919;
   border: none;
+}
+@media (min-width: 800px) {
+  main .haut .right .card .pic .flou .desc button {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
 }
 main .haut .right .card .pic .flou .desc button ion-icon {
   display: flex;
@@ -292,7 +390,7 @@ main .haut .right .card .pic .flou .desc button ion-icon {
   padding: 0.2rem 0.2rem;
   cursor: pointer;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .pic .flou .desc button ion-icon {
     width: 30px;
     height: 25px;
@@ -305,7 +403,7 @@ main .haut .right .card .bas {
   flex-direction: row;
   margin: 10px;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .bas {
     margin: auto;
     margin-top: 20px;
@@ -322,7 +420,7 @@ main .haut .right .card .bas .gauche p {
   color: grey;
   margin-top: -5px;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .bas .gauche p {
     font-size: 20px;
   }
@@ -332,7 +430,7 @@ main .haut .right .card .bas .gauche h1 {
   text-transform: uppercase;
   margin-top: 5px;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .bas .gauche h1 {
     font-size: 25px;
     margin-top: 10px;
@@ -351,10 +449,10 @@ main .haut .right .card .bas .cta button {
   padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .haut .right .card .bas .cta button {
     font-size: 20px;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
   }
 }
 main .centre {
@@ -535,13 +633,32 @@ main .bas .bas .scroll ion-icon {
   border-radius: 50%;
   padding: 0.5rem;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
   main .bas .bas .scroll {
     display: none;
   }
 }
-main .scroll {
+main .prog {
   display: none;
+}
+@media (min-width: 800px) {
+  main .prog {
+    display: block;
+    width: 15px;
+    position: fixed;
+    right: 30px;
+  }
+}
+main .prog .barre {
+  border: 1px #191919 solid;
+  height: 600px;
+  border-radius: 50px;
+}
+main .prog .barre span {
+  height: 200px;
+  background-color: lightgrey;
+  display: block;
+  border-radius: 50px 50px 0 0;
 }
 
 footer {
