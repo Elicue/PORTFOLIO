@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>PORTFOLIO</title><link rel="icon" type="image/png" href="images/logo_v2.svg" />
+    <title>PORTFOLIO</title><link rel="icon" href="images/logo_v2.svg" />
 </head>
 <body>
 
-  <!-- <div class="fond">
+<div class="cursor"></div>
+
+<!-- <div class="fond">
     <div class="cercle"></div>
     <div class="cercle"></div>
     <div class="cercle"></div>
@@ -17,7 +19,7 @@
     <div class="cercle"></div>
   </div> -->
 
-<!-- HEADER -->
+<!-- HEADER --> 
 
   <header>
     <div class="content">
@@ -30,7 +32,7 @@
         <span></span>
       </div>
       <div class="menu">
-        <ion-icon name="home-outline"></ion-icon>
+        <!-- <ion-icon name="home-outline"></ion-icon> -->
         <ion-icon name="person-outline"></ion-icon>
         <ion-icon name="desktop-outline"></ion-icon>
         <ion-icon name="call-outline"></ion-icon>
@@ -55,7 +57,9 @@
             <button>lorem</button>
           </div>
         <div class="arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Down Circle</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M176 262.62L256 342l80-79.38M256 330.97V170"/><path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="5"/></svg>
+          <a href="#projet">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Down Circle</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M176 262.62L256 342l80-79.38M256 330.97V170"/><path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="5"/></svg>
+          </a>
         </div>
       </div>
       <div class="img">
@@ -69,7 +73,8 @@
             <p>lorem ipsum</p>
           </div>
           <div class="image">
-            <img src="images/img-1-resize.jpeg" alt="moi">
+            <img src="images/moi.png" alt="moi">
+            <!-- <img src="images/img-1-resize.jpeg" alt="moi"> -->
             <div class="flou">
               <div class="titre">
                 <h3>lorem ipsum dolor</h3>
@@ -104,7 +109,7 @@
   <!-- PROJECT -->
   <div class="projet">
     <div class="gauche">
-      <div class="card">
+      <div class="card" id="projet">
         <div class="titre">
           <h3>lorem ipsum</h3>
           <p>lorem ipsum</p>
@@ -259,7 +264,6 @@
 </footer>
 
 <!-- FOOTER -->
-
 <!-- SCRIPT -->
 
 <script src="script.js"></script>

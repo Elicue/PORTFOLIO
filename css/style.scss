@@ -6,12 +6,13 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     color: color(noir);
+    cursor: none;
 }
 
 $colors :(
     noir:#191919,
-    primary:#f3e5f5,
-    flou:#f3e5f586,
+    primary:#e8c9c4,
+    secondary:#faecea,
 );
 
 $border-height : 1px;
@@ -26,9 +27,53 @@ $desktop :800px;
     @media (min-width : #{$desktop}){
         @content;
     }
-    
 }
 
+.cursor {
+    width: 3rem;
+    height: 3rem;
+    border: $border-height solid color( noir);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+}
+
+// -------------------------KEYFRAME-------------------------
+
+@keyframes spin{
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradient-animation-in {
+    0% {
+        transform: scale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+    100% {
+        transform: scale(105%);
+        -webkit-filter: grayscale(0%);
+    }
+}
+
+@keyframes gradient-animation-out {
+    0% {
+        transform: scale(105%);
+        -webkit-filter: grayscale(0%);
+    }
+    100% {
+        transform: scale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+}
+
+// -------------------------KEYFRAME-------------------------
 // -------------------------BODY-------------------------
 
 .fond {
@@ -39,7 +84,7 @@ $desktop :800px;
     
     .cercle:nth-child(1) {
         position: absolute;
-        background-color: color(primary);
+        background-color: color(secondary);
         border-radius: 50%;
         width: 700px;
         height: 700px;
@@ -49,7 +94,7 @@ $desktop :800px;
     
     .cercle:nth-child(2) {
         position: absolute;
-        background-color: color(primary);
+        background-color: color(secondary);
         border-radius: 50%;
         width: 300px;
         height: 300px;
@@ -59,7 +104,7 @@ $desktop :800px;
     
     .cercle:nth-child(3) {
         position: absolute;
-        background-color: color(primary);
+        background-color: color(secondary);
         border-radius: 50%;
         width: 100px;
         height: 100px;
@@ -69,7 +114,7 @@ $desktop :800px;
     
     .cercle:nth-child(4) {
         position: absolute;
-        background-color: color(primary);
+        background-color: color(secondary);
         border-radius: 50%;
         width: 500px;
         height: 500px;
@@ -79,7 +124,7 @@ $desktop :800px;
     
     .cercle:nth-child(3) {
         position: absolute;
-        background-color: color(primary);
+        background-color: color(secondary);
         border-radius: 50%;
         width: 100px;
         height: 100px;
@@ -226,7 +271,7 @@ header {
                 }
 
                 strong{
-                    color: lightgrey;
+                    color: color(primary);
                 }
 
                 @include desktop {
@@ -305,8 +350,13 @@ header {
                 margin-top: 50px;
             }
 
-            svg {
-                width: 10%;
+            a {
+                width: 100%;
+                color: color(noir);
+
+                svg {
+                    width: 10%;
+                }
             }
         }
     }
@@ -378,16 +428,6 @@ header {
             }
         }
 
-        @keyframes spin{
-            0%{
-                transform: rotate(0);
-            }
-        
-            100%{
-                transform: rotate(360deg);
-            }
-        }
-
         .card {
             display: flex;
             flex-direction:column;
@@ -439,6 +479,14 @@ header {
 
                 img {
                     width: 100%;
+                    -webkit-filter: grayscale(100%);
+                    animation: gradient-animation-out .5s ease;
+                }
+
+                img:hover {
+                    animation: gradient-animation-in .3s ease;
+                    -webkit-filter: grayscale(0%);
+                    transform: scale(105%);
                 }
 
                 .flou {
@@ -447,7 +495,6 @@ header {
                     backdrop-filter: blur(10px);
                     height: 60px;
                     width: 45%;
-                    // background-color: color(flou);
                     background-color: rgba(255, 255, 255, 0.5);
                     position: absolute;
                     margin: -80px 0 0 15px;
@@ -456,13 +503,12 @@ header {
                     @include desktop {
                         display: flex;
                         flex-direction: column;
-                        // background-color: color(flou);
                         backdrop-filter: blur(10px);
                         background-color: rgba(255, 255, 255, 0.5);
                         position: absolute;
                         width: 23%;
                         height: 120px;
-                        margin: 220px 0 0 28px;
+                        margin: 350px 0 0 28px;
                         padding: 10px;
                     }
 
@@ -625,7 +671,7 @@ header {
 
             span {
                 height: 200px;
-                background-color: lightgrey;
+                background-color: color(primary);
                 // background-color: color(primary);
                 display: block;
                 border-radius: 50px 50px 0 0;
@@ -698,28 +744,6 @@ header {
                     animation: gradient-animation-in .5s ease;
                     -webkit-filter: grayscale(0%);
                     transform: scale(105%);
-                }
-            }
-
-            @keyframes gradient-animation-in {
-                0% {
-                    transform: scale(100%);
-                    -webkit-filter: grayscale(100%);
-                }
-                100% {
-                    transform: scale(105%);
-                    -webkit-filter: grayscale(0%);
-                }
-            }
-
-            @keyframes gradient-animation-out {
-                0% {
-                    transform: scale(105%);
-                    -webkit-filter: grayscale(0%);
-                }
-                100% {
-                    transform: scale(100%);
-                    -webkit-filter: grayscale(100%);
                 }
             }
 
@@ -1052,7 +1076,7 @@ header {
             -webkit-text-stroke: $border-height color(noir);
 
             h1:nth-child(2) {
-                color: lightgrey;
+                color: color(primary);
             }
 
             h1:nth-child(3) {
@@ -1083,7 +1107,7 @@ header {
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
-                background-color: lightgrey;
+                background-color: color(primary);
             }
 
             img {
