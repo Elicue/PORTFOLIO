@@ -1,5 +1,7 @@
 "use strict"
 
+// -------------------------CURSOR-------------------------
+
 let mouseCursor = document.querySelector(".cursor");
 
 window.addEventListener("mousemove", cursor);
@@ -22,3 +24,34 @@ window.onscroll = function() {
     document.getElementsByClassName("cursor")[0].classList.remove(className2);
   }
 };
+
+// -------------------------CURSOR-------------------------
+// -------------------------SCROLLBAR-------------------------
+
+let progress = document.getElementById('progressBar');
+let TotalHeight = document.body.scrollHeight - window.innerHeight;
+
+window.onscroll = function(){
+    let progressHeight = (window.pageYOffset / TotalHeight) * 100;
+    progress.style.height = progressHeight + "%";
+}
+
+// -------------------------SCROLLBAR-------------------------
+// -------------------------LINE-------------------------
+
+let path = document.querySelector('path')
+let pathLength = path.getTotalLength()
+
+path.style.strokeDasharray = pathLength + ' ' + pathLength;
+
+path .style.strokeDashoffset = pathLength;
+
+window.addEventListener('scroll', () => {
+
+  var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    var drawLength = pathLength * scrollPercentage;
+    path.style.strokeDashoffset = pathLength - drawLength;
+
+})
+
+// -------------------------LINE-------------------------
