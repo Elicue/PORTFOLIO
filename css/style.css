@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Tangerine:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -376,6 +377,8 @@ footer .haut .logo {
     width: 170px;
     height: 170px;
     position: absolute;
+    -webkit-animation: spin 10s linear infinite;
+            animation: spin 10s linear infinite;
   }
 }
 footer .bas {
@@ -1298,9 +1301,7 @@ body {
   width: 156px;
   height: 156px;
   position: absolute;
-  margin-top: -30px;
-  -webkit-animation: spin 10s linear infinite;
-          animation: spin 10s linear infinite;
+  margin-top: -28px;
 }
 
 .plus {
@@ -1369,4 +1370,150 @@ body {
 .plus .bas .arrow svg {
   width: 70px;
   height: 70px;
+}
+
+.projets {
+  width: 100%;
+}
+.projets main {
+  width: 100%;
+}
+.projets main .haut {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 50px;
+}
+.projets main .haut .card {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border: 1px #191919 solid;
+  background-color: #fff;
+}
+.projets main .haut .card .titre {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.projets main .haut .card .titre h3 {
+  text-transform: uppercase;
+}
+.projets main .haut .card .titre p {
+  color: grey;
+}
+.projets main .haut .card .image {
+  width: 90%;
+  margin: auto;
+}
+@media (min-width: 800px) {
+  .projets main .haut .card .image img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    -webkit-animation: gradient-animation-out 0.5s ease;
+            animation: gradient-animation-out 0.5s ease;
+  }
+  .projets main .haut .card .image img:hover {
+    -webkit-animation: gradient-animation-in 0.5s ease;
+            animation: gradient-animation-in 0.5s ease;
+    -webkit-filter: grayscale(0%);
+    transform: scale(105%);
+  }
+}
+.projets main .haut .card .image img {
+  width: 100ù;
+}
+.projets main .haut .card .desc {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.projets main .haut .card .desc .left {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.projets main .haut .card .desc .left p {
+  color: grey;
+}
+.projets main .haut .card .desc .left h3 {
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.projets main .haut .card .desc .right {
+  margin-top: 20px;
+}
+.projets main .haut .card .desc .right button {
+  background-color: #191919;
+  border: none;
+  color: #fff;
+  padding: 1em 2.5em;
+}
+.projets main .haut .txt {
+  width: 50%;
+  margin-left: 30px;
+}
+.projets main .haut .txt .titre {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.projets main .haut .txt .titre h1 {
+  -webkit-text-stroke: 1px #191919;
+  font-size: 80px;
+  text-transform: uppercase;
+  position: absolute;
+}
+.projets main .haut .txt .titre h1 span {
+  color: #fff;
+}
+.projets main .haut .txt .content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.projets main .haut .txt .content .titre {
+  display: flex;
+  flex-direction: column;
+}
+.projets main .haut .txt .content .titre h3 {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: bold;
+}
+.projets main .haut .txt .content .titre p {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  font-size: 30px;
+  align-items: center;
+}
+.projets main .haut .txt .content .titre p span {
+  display: flex;
+  height: 2px;
+  border-radius: 50px;
+  background-color: #191919;
+  width: 65px;
+  margin: 0 20px;
+}
+.projets main .haut .txt .content .txt {
+  display: flex;
+  flex-direction: column;
+}
+.projets main .haut .txt .content .txt .text:nth-child(1) {
+  border-left: #191919 solid 1px;
+  padding: 20px 10px;
+}
+.projets main .haut .txt .content .txt .text:nth-child(2) {
+  text-align: right;
+  border-right: #191919 solid 1px;
+  padding: 20px 10px;
 }/*# sourceMappingURL=style.css.map */

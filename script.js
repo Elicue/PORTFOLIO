@@ -33,25 +33,33 @@ let TotalHeight = document.body.scrollHeight - window.innerHeight;
 
 window.onscroll = function(){
     let progressHeight = (window.pageYOffset / TotalHeight) * 100;
-    progress.style.height = progressHeight + "%";
+    progress.style.height = getScrollPercent() + "%";
+}
+
+function getScrollPercent() {
+  var h = document.documentElement, 
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight';
+return (h[st]) / ((h[sh]) - h.clientHeight) * 100;
 }
 
 // -------------------------SCROLLBAR-------------------------
 // -------------------------LINE-------------------------
 
-let path = document.querySelector('path')
-let pathLength = path.getTotalLength()
+// let path = document.querySelector('path')
+// let pathLength = path.getTotalLength()
 
-path.style.strokeDasharray = pathLength + ' ' + pathLength;
+// path.style.strokeDasharray = pathLength + ' ' + pathLength;
 
-path .style.strokeDashoffset = pathLength;
+// path .style.strokeDashoffset = pathLength;
 
-window.addEventListener('scroll', () => {
+// window.addEventListener('scroll', () => {
 
-  var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-    var drawLength = pathLength * scrollPercentage;
-    path.style.strokeDashoffset = pathLength - drawLength;
+//   var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+//     var drawLength = pathLength * scrollPercentage;
+//     path.style.strokeDashoffset = pathLength - drawLength;
 
-})
+// })
 
 // -------------------------LINE-------------------------

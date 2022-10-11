@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Tangerine:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +11,7 @@
 
 $colors :(
     noir:#191919,
+    gris:grey,
     primary:#e8c9c4,
     secondary:#faecea,
 );
@@ -215,6 +216,7 @@ header {
                 margin: 0 8px;
                 font-size: 15px;
                 text-transform: uppercase;
+                // font-family: 'Courgette', cursive;
 
                 @include desktop {
                     font-size: 20px;
@@ -403,7 +405,7 @@ footer {
                     width: 170px;
                     height: 170px;
                     position: absolute;
-                    // animation: spin 10s linear infinite;
+                    animation: spin 10s linear infinite;
                 }
             }
         }
@@ -544,6 +546,7 @@ body {
 }
 
 // -------------------------MAIN-------------------------
+// --------------------------------ACCUEIL--------------------------------
 // -------------------------PERSO-------------------------
 
 .perso {
@@ -615,7 +618,7 @@ body {
 
             p {
                 font-size: 15px;
-                color: grey;
+                color: color(gris);
                 line-height: 18px;
 
                 @include desktop {
@@ -770,7 +773,7 @@ body {
                 }
 
                 p {
-                    color: grey;
+                    color: color(gris);
                 }
             }
 
@@ -842,7 +845,7 @@ body {
 
                         p {
                             font-size:  10px;
-                            color: grey;
+                            color: color(gris);
                             
                             @include desktop{
                                 font-size: 15px;
@@ -923,7 +926,7 @@ body {
 
                     p {
                         font-size: 10px;
-                        color: grey;
+                        color: color(gris);
                         margin-top: -5px;
                         
                         @include desktop {
@@ -1008,7 +1011,7 @@ body {
                 }
 
                 p {
-                    color: grey;
+                    color: color(gris);
                 }
             }
 
@@ -1050,7 +1053,7 @@ body {
                     flex-direction: column;
 
                     p {
-                        color: grey;
+                        color: color(gris);
                     }
 
                     h3 {
@@ -1154,7 +1157,7 @@ body {
                     margin-left: 80px;
                     border-right: $border-height color(noir) solid;
                     padding: 20px 20px 20px 0;
-                    color: grey;
+                    color: color(gris);
                 }
             }
         }
@@ -1201,7 +1204,7 @@ body {
                 }
 
                 p {
-                    color: grey;
+                    color: color(gris);
                     font-size: 10px;
 
                     @include desktop {
@@ -1253,7 +1256,7 @@ body {
                     flex-direction: column;
 
                     p {
-                        color: grey;
+                        color: color(gris);
                         font-size: 10px;
 
                         @include desktop {
@@ -1346,7 +1349,7 @@ body {
 
             p {
                 text-align: right;
-                color: grey;
+                color: color(gris);
                 font-size: 15px;
             }
         }
@@ -1377,7 +1380,7 @@ body {
 
         .content {
             margin-top: 70px;
-            color: grey;
+            color: color(gris);
             width: 70%;
         }
 
@@ -1404,9 +1407,9 @@ body {
                 width: 156px;
                 height: 156px;
                 position: absolute;
-                margin-top: -30px;
-                animation: spin 10s linear infinite;
+                margin-top: -28px;
             }
+
         }
     }
 }
@@ -1440,7 +1443,7 @@ body {
         margin-top: 10px;
 
         p {
-            color:  grey;
+            color:  color(gris);
             font-size: 15px;
         }
     }
@@ -1495,3 +1498,180 @@ body {
 
 // -------------------------PLUS-------------------------
 // -------------------------BODY-------------------------
+// --------------------------------ACCUEIL--------------------------------
+
+// --------------------------------PROJET--------------------------------
+
+.projets {
+    width: 100%;
+
+    main {
+        width: 100%;
+
+        .haut {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            margin-top: 50px;
+        
+            .card {
+                display: flex;
+                flex-direction: column;
+                width: 25%;
+                border: $border-height color(noir) solid;
+                background-color: #fff;
+    
+                .titre {
+                    width: 90%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+    
+                    h3 {
+                        text-transform: uppercase;
+                    }
+    
+                    p {
+                        color: color(gris);
+                    }
+                }
+    
+                .image {
+                    width: 90%;
+                    margin: auto;
+    
+                    @include desktop {
+    
+                        img {
+                            width: 100%;
+                            -webkit-filter: grayscale(100%);
+                            animation: gradient-animation-out .5s ease;
+                        }
+        
+                        img:hover {
+                            animation: gradient-animation-in .5s ease;
+                            -webkit-filter: grayscale(0%);
+                            transform: scale(105%);
+                        }
+                    }
+    
+                    img {
+                        width: 100ù;
+                    }
+                }
+    
+                .desc {
+                    width: 90%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+    
+                    .left {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        display: flex;
+                        flex-direction: column;
+    
+                        p {
+                            color: color(gris);
+                        }
+    
+                        h3 {
+                            margin-top: 10px;
+                            text-transform: uppercase;
+                        }
+                    }
+    
+                    .right {
+                        margin-top: 20px;
+                        button {
+                            background-color: color(noir);
+                            border: none;
+                            color: #fff;
+                            padding: 1em 2.5em;
+                        }
+                    }
+                }
+            }
+
+            .txt {
+                width: 50%;
+                margin-left: 30px;
+
+                .titre {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+
+                    h1{
+                        -webkit-text-stroke: $border-height color(noir);
+                        font-size: 80px;
+                        text-transform: uppercase;
+                        position: absolute;
+
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 100px;
+
+                    .titre {
+                        display: flex;
+                        flex-direction: column;
+
+                        h3 {
+                            text-transform: uppercase;
+                            font-size: 50px;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            display: flex;
+                            flex-direction: row;
+                            text-transform: uppercase;
+                            font-size: 30px;
+                            align-items: center;
+
+                            span {
+                                display: flex;
+                                height: 2px;
+                                border-radius: 50px;
+                                background-color: color(noir);
+                                width: 65px;
+                                margin: 0 20px;
+                            }
+                        }
+                    }
+
+                    .txt {
+                        display: flex;
+                        flex-direction: column;
+
+                        .text:nth-child(1) {
+                            border-left: color(noir) solid $border-height;
+                            padding: 20px 10px;
+                        }
+
+                        .text:nth-child(2) {
+                            text-align: right;
+                            border-right: color(noir) solid $border-height;
+                            padding: 20px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------PROJET--------------------------------
