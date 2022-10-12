@@ -1533,15 +1533,32 @@ body {
             }
 
             .gauche {
-                width: 30%;
+                width: 100%;
                 margin-top: 50px;
+
+                @include desktop {
+                    width: 30%;
+                    margin-top: 50px;
+                }
 
                 .card {
                     display: flex;
                     flex-direction: column;
-                    width: 100%;
+                    width: 50%;
                     border: $border-height color(noir) solid;
                     background-color: #fff;
+                    margin-left: 190px;
+                    margin-bottom: -70px;
+
+                    @include desktop {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        border: $border-height color(noir) solid;
+                        background-color: #fff;
+                        margin-left: 0px;
+                        margin-bottom: 0px;
+                    }
         
                     .titre {
                         width: 90%;
@@ -1549,15 +1566,35 @@ body {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-        
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+
+                        @include desktop {
+                            width: 90%;
+                            margin: auto;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                        }
+                        
                         h3 {
                             text-transform: uppercase;
+                            font-size: 12px;
+
+                            @include desktop {
+                                font-size: 20px;
+                            }
                         }
         
                         p {
                             color: color(gris);
+                            font-size: 10px;
+
+                            @include desktop {
+                                font-size: 15px;
+                            }
                         }
                     }
         
@@ -1581,10 +1618,10 @@ body {
                         }
         
                         img {
-                            width: 100ù;
+                            width: 100%;
                         }
                     }
-                    
+
                     .desc {
                         width: 90%;
                         margin: auto;
@@ -1593,28 +1630,36 @@ body {
                         justify-content: space-between;
         
                         .left {
-                            margin-top: 20px;
-                            margin-bottom: 20px;
+                            margin-top: 0px;
+                            margin-bottom: 10px;
                             display: flex;
                             flex-direction: column;
-        
+
+                            @include desktop {
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                                display: flex;
+                                flex-direction: column;
+                            }
+
+                            h3 {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                                margin-top: 5px;
+    
+                                @include desktop {
+                                    font-size: 20px;
+                                    margin-top: 10px;
+                                }
+                            }
+            
                             p {
                                 color: color(gris);
-                            }
-        
-                            h3 {
-                                margin-top: 10px;
-                                text-transform: uppercase;
-                            }
-                        }
-        
-                        .right {
-                            margin-top: 20px;
-                            button {
-                                background-color: color(noir);
-                                border: none;
-                                color: #fff;
-                                padding: 1em 2.5em;
+                                font-size: 10px;
+    
+                                @include desktop {
+                                    font-size: 15px;
+                                }
                             }
                         }
                     }
@@ -1694,18 +1739,27 @@ body {
         
 
             .txt {
-                width: 75%;
-                margin-left: 30px;
+                width: 100%;
+                margin-left: 0px;
+
+                @include desktop {
+                    width: 75%;
+                    margin-left: 30px;
+                }
 
                 .titre {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: -20px;
+                    margin-top: -250px;
+
+                    @include desktop {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: -20px;
+                    }
 
                     h1{
                         -webkit-text-stroke: $border-height color(noir);
-                        font-size: 100px;
+                        font-size: 50px;
                         text-transform: uppercase;
                         position: absolute;
                         color: #fff;
@@ -1713,14 +1767,34 @@ body {
                         span {
                             color: color(primary);
                         }
+
+                        @include desktop {
+                            -webkit-text-stroke: $border-height color(noir);
+                            font-size: 100px;
+                            text-transform: uppercase;
+                            position: absolute;
+                            color: #fff;
+    
+                            span {
+                                color: color(primary);
+                            }
+                        }
                     }
                 }
 
                 .content {
                     display: flex;
-                    flex-direction: row;
-                    margin-top: 150px;
+                    flex-direction: column;
+                    margin-top: 340px;
                     width: 100%;
+
+                    @include desktop {
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 150px;
+                        width: 100%;
+                    }
+
 
                     .left {
                         
@@ -1730,34 +1804,66 @@ body {
     
                             h3 {
                                 text-transform: uppercase;
-                                font-size: 60px;
+                                font-size: 35px;
                                 font-weight: bold;
+
+                                @include desktop {
+                                    text-transform: uppercase;
+                                    font-size: 60px;
+                                    font-weight: bold;
+                                }
                             }
     
                             p {
                                 display: flex;
                                 flex-direction: row;
                                 text-transform: uppercase;
-                                font-size: 40px;
+                                font-size: 20px;
                                 align-items: center;
-    
+
                                 span {
                                     display: flex;
-                                    height: 2px;
+                                    height: 1px;
                                     border-radius: 50px;
                                     background-color: color(noir);
-                                    width: 65px;
-                                    margin: 0 20px;
+                                    width: 55px;
+                                    margin: 0 10px;
+                                }
+
+                                @include desktop {
+                                    display: flex;
+                                    flex-direction: row;
+                                    text-transform: uppercase;
+                                    font-size: 40px;
+                                    align-items: center;
+        
+                                    span {
+                                        display: flex;
+                                        height: 2px;
+                                        border-radius: 50px;
+                                        background-color: color(noir);
+                                        width: 65px;
+                                        margin: 0 20px;
+                                    }
                                 }
                             }
                         }
     
                         .txt {
+                            width: 50%;
                             display: flex;
                             flex-direction: column;
-                            margin-top: 50px;
+                            margin-top: 10px;
                             color: color(gris);
-    
+
+                            @include desktop {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                margin-top: 50px;
+                                color: color(gris);
+                            }
+
                             .text:nth-child(1) {
                                 border-left: color(noir) solid $border-height;
                                 padding: 20px 10px;
@@ -1767,21 +1873,49 @@ body {
                                 text-align: right;
                                 border-right: color(noir) solid $border-height;
                                 padding: 20px 10px;
-                                margin-right: -50px;
+                                margin-right: -190px;
                                 margin-top: 20px;
                                 display: flex;
                                 justify-content: end;
 
                                 p {
-                                    width: 70%;
+                                    width: 50%;
+                                }
+                            }
+                            
+                            @include desktop {
+                                .text:nth-child(1) {
+                                    border-left: color(noir) solid $border-height;
+                                    padding: 20px 10px;
+                                }
+        
+                                .text:nth-child(2) {
+                                    text-align: right;
+                                    border-right: color(noir) solid $border-height;
+                                    padding: 20px 10px;
+                                    margin-right: -50px;
+                                    margin-top: 20px;
+                                    display: flex;
+                                    justify-content: end;
+    
+                                    p {
+                                        width: 70%;
+                                    }
                                 }
                             }
 
                             .cta {
-                                width: 100%;
+                                width: 150%;
                                 display: flex;
                                 justify-content: flex-end;
-                                margin-top: 50px;
+                                margin-top: 20px;
+
+                                @include desktop {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    margin-top: 50px;
+                                }
 
                                 button {
                                     font-size: 15px;
@@ -1804,7 +1938,11 @@ body {
                     }
 
                     .right {
-                        width: 80%;
+                        width: 50%;
+
+                        @include desktop {
+                            width: 80%;
+                        }
                         
                         .card {
                             display: flex;
@@ -1812,6 +1950,16 @@ body {
                             width: 90%;
                             border: $border-height color(noir) solid;
                             background-color: #fff;
+                            margin-top: -220px;
+
+                            @include desktop {
+                                display: flex;
+                                flex-direction: column;
+                                width: 90%;
+                                border: $border-height color(noir) solid;
+                                background-color: #fff;
+                                margin-top: 0px;
+                            }
                 
                             .titre {
                                 width: 90%;
@@ -1819,15 +1967,39 @@ body {
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: space-between;
-                                margin-top: 20px;
-                                margin-bottom: 20px;
-                
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+
+                                @include desktop {
+                                    width: 90%;
+                                    margin: auto;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    margin-top: 20px;
+                                    margin-bottom: 20px;
+                                }
+
                                 h3 {
                                     text-transform: uppercase;
+                                    font-size: 12px;
                                 }
                 
                                 p {
                                     color: color(gris);
+                                    font-size: 10px;
+                                }
+                
+                                @include desktop {
+                                    h3 {
+                                        text-transform: uppercase;
+                                        font-size: 20px;
+                                    }
+                    
+                                    p {
+                                        color: color(gris);
+                                        font-size: 15px;
+                                    }
                                 }
                             }
                 
@@ -1851,7 +2023,7 @@ body {
                                 }
                 
                                 img {
-                                    width: 100ù;
+                                    width: 100%;
                                 }
                             }
                 
@@ -1864,29 +2036,70 @@ body {
                 
                                 .left {
                                     width: 75%;
-                                    margin-top: 20px;
-                                    margin-bottom: 20px;
+                                    margin-top: 10px;
+                                    margin-bottom: 10px;
                                     display: flex;
                                     flex-direction: column;
-                
+
+                                    @include desktop {
+                                        width: 75%;
+                                        margin-top: 20px;
+                                        margin-bottom: 20px;
+                                        display: flex;
+                                        flex-direction: column;
+                                    }
+
                                     p {
                                         color: color(gris);
+                                        font-size: 10px;
                                     }
                 
                                     h3 {
-                                        margin-top: 10px;
+                                        margin-top: 5px;
                                         text-transform: uppercase;
+                                        font-size: 12px;
                                     }
+                                    
+
+                                    @include desktop {
+                                        p {
+                                            color: color(gris);
+                                            font-size: 15px;
+                                        }
+                    
+                                        h3 {
+                                            margin-top: 10px;
+                                            text-transform: uppercase;
+                                            font-size: 20px;
+                                        }
+
+                                    }
+                
                                 }
                 
                                 .right {
                                     width: 30%;
-                                    margin-top: 20px;
+                                    margin-top: 10px;
+
                                     button {
                                         background-color: color(noir);
                                         border: none;
                                         color: #fff;
-                                        padding: 1em 2.5em;
+                                        padding: 0.5em 1em;
+                                        font-size: 10px;
+                                    }
+
+                                    @include desktop {
+                                        width: 30%;
+                                        margin-top: 20px;
+
+                                        button {
+                                            background-color: color(noir);
+                                            border: none;
+                                            color: #fff;
+                                            padding: 1em 2.5em;
+                                            font-size: 12px;
+                                        }
                                     }
                                 }
                             }
@@ -1902,19 +2115,44 @@ body {
             width: 90%;
             margin: auto;
             display: flex;
-            flex-direction: row;
-            margin-top: 70px;
+            flex-direction: column;
+            margin-top: 50px;
             margin-bottom: 70px;
 
+            @include desktop {
+                width: 90%;
+                margin: auto;
+                display: flex;
+                flex-direction: row;
+                margin-top: 70px;
+                margin-bottom: 70px;
+            }
+
+            img {
+                width: 10%;
+            }
+
             .left {
-                width: 45%;
+                width: 100%;
+
+                @include desktop {
+                    width: 45%;
+                }
 
                 .card {
                     display: flex;
                     flex-direction: column;
-                    width: 90%;
+                    width: 100%;
                     border: $border-height color(noir) solid;
                     background-color: #fff;
+
+                    @include desktop {
+                        display: flex;
+                        flex-direction: column;
+                        width: 90%;
+                        border: $border-height color(noir) solid;
+                        background-color: #fff;
+                    }
         
                     .titre {
                         width: 90%;
@@ -1922,15 +2160,39 @@ body {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-        
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+
+                        @include desktop {
+                            width: 90%;
+                            margin: auto;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                        }
+
                         h3 {
                             text-transform: uppercase;
+                            font-size: 12px;
                         }
         
                         p {
                             color: color(gris);
+                            font-size: 10px;
+                        }
+        
+                        @include desktop {
+                            h3 {
+                                text-transform: uppercase;
+                                font-size: 20px;
+                            }
+            
+                            p {
+                                color: color(gris);
+                                font-size: 15px;
+                            }
                         }
                     }
         
@@ -1954,7 +2216,7 @@ body {
                         }
         
                         img {
-                            width: 100ù;
+                            width: 100%;
                         }
                     }
         
@@ -1967,29 +2229,67 @@ body {
         
                         .left {
                             width: 75%;
-                            margin-top: 20px;
-                            margin-bottom: 20px;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
                             display: flex;
                             flex-direction: column;
-        
+
+                            @include desktop {
+                                width: 75%;
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                                display: flex;
+                                flex-direction: column;
+                            }
+
                             p {
                                 color: color(gris);
+                                font-size: 10px;
                             }
         
                             h3 {
                                 margin-top: 10px;
                                 text-transform: uppercase;
+                                font-size: 12px;
+                            }
+        
+                            @include desktop {
+                                p {
+                                    color: color(gris);
+                                    font-size: 15px;
+                                }
+            
+                                h3 {
+                                    margin-top: 10px;
+                                    text-transform: uppercase;
+                                    font-size: 20px;
+                                }
                             }
                         }
         
                         .right {
                             width: 30%;
-                            margin-top: 20px;
+                            margin-top: 15px;
+
+                            @include desktop {
+                                width: 30%;
+                                margin-top: 20px;
+                            }
+
                             button {
                                 background-color: color(noir);
                                 border: none;
                                 color: #fff;
-                                padding: 1em 2.5em;
+                                padding: 0.5em 1em;
+                                font-size: 10px;
+
+                                @include desktop {
+                                    background-color: color(noir);
+                                    border: none;
+                                    color: #fff;
+                                    padding: 1em 2.5em;
+                                    font-size: 15px;
+                                }
                             }
                         }
                     }
@@ -1997,34 +2297,74 @@ body {
             }
 
             .center {
-                width: 25%;
+                width: 100%;
                 display: flex;
                 flex-direction: column;
+                margin-top: 30px;
+
+                @include desktop {
+                    width: 25%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0px;
+                }
 
                 .titre {
                     display: flex;
                     flex-direction: column;
+                    width: 50%;
+                    margin-left: 10px;
+
+                    @include desktop {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        margin-left: 0px;
+                    }
 
                     h3 {
                         text-transform: uppercase;
-                        font-size: 60px;
+                        font-size: 30px;
                         font-weight: bold;
+
+                        @include desktop {
+                            text-transform: uppercase;
+                            font-size: 60px;
+                            font-weight: bold;
+                        }
                     }
 
                     p {
                         display: flex;
                         flex-direction: row;
                         text-transform: uppercase;
-                        font-size: 40px;
+                        font-size: 20px;
                         align-items: center;
+
+                        @include desktop {
+                            display: flex;
+                            flex-direction: row;
+                            text-transform: uppercase;
+                            font-size: 40px;
+                            align-items: center;
+                        }
 
                         span {
                             display: flex;
-                            height: 2px;
+                            height: 1px;
                             border-radius: 50px;
                             background-color: color(noir);
-                            width: 150px;
-                            margin: 0 20px;
+                            width: 250px;
+                            margin: 0 10px;
+
+                            @include desktop {
+                                display: flex;
+                                height: 2px;
+                                border-radius: 50px;
+                                background-color: color(noir);
+                                width: 150px;
+                                margin: 0 20px;
+                            }
                         }
                     }
                 }
@@ -2032,23 +2372,49 @@ body {
                 .content {
                     width: 100%;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    justify-content: space-between;
                     margin-top: 30px;
+                    margin-bottom: 100px;
+
+                    @include desktop {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 30px;
+                        margin-bottom: 0px;
+                    }
 
                     .text {
-                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        width: 45%;
                         border-left: color(noir) $border-height solid;
                         padding: 20px 10px;
 
+                        @include desktop {
+                            width: 100%;
+                            border-left: color(noir) $border-height solid;
+                            padding: 20px 10px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
                         p {
                             color: color(gris);
-                            width: 80%;
+                            width: 100%;
+
+                            @include desktop {
+                                color: color(gris);
+                                width: 80%;
+                            }
                         }
                     }
 
                     .cta {
-                        width: 100%;
+                        width: 40%;
                         margin-top: 50px;
+                        z-index: 88;
 
                         button {
                             background-color: transparent;
