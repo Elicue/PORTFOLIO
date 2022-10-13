@@ -2282,6 +2282,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  margin-bottom: 80px;
 }
 .contact main .haut .titre {
   width: 100%;
@@ -2307,7 +2308,7 @@ body {
 .contact main .haut .content {
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .contact main .haut .content .gauche {
   width: 50%;
@@ -2449,7 +2450,7 @@ body {
             backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.5);
     margin-top: 650px;
-    margin-left: 610px;
+    margin-left: 600px;
     z-index: 1;
   }
 }
@@ -2462,8 +2463,8 @@ body {
     position: absolute;
     width: 150px;
     height: 150px;
-    margin-left: 620px;
-    margin-top: -75px;
+    margin-left: 610px;
+    margin-top: -95px;
     transform: rotate(15deg);
     z-index: 2;
   }
@@ -2489,6 +2490,138 @@ body {
   display: flex;
   flex-direction: column;
 }
+.contact main .haut .content .droite .titre {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .droite .titre h3 {
+    position: relative;
+    font-size: 60px;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-weight: 100;
+  }
+}
+.contact main .haut .content .droite .titre p {
+  text-transform: uppercase;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact main .haut .content .droite .titre p span {
+  background-color: #191919;
+  width: 50px;
+  height: 2px;
+  margin: 0 10px;
+}
+.contact main .haut .content .droite .cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 65%;
+  margin: auto;
+}
+.contact main .haut .content .droite .cta button {
+  border: 1px #191919 solid;
+  background-color: transparent;
+  color: #191919;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.contact main .haut .content .droite .txt {
+  border-left: 1px #191919 solid;
+  padding: 20px 0 20px 20px;
+  color: grey;
+  width: 65%;
+  margin: auto;
+}
 .contact main .haut .content img {
   width: 10%;
+}
+.contact main .form {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact main .form .titre {
+  display: flex;
+  flex-direction: column;
+}
+.contact main .form .titre h3:nth-child(1) {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.contact main .form .titre h3:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 35px;
+  font-weight: 100;
+  margin-top: -30px;
+}
+.contact main .form .titre h3:nth-child(2) svg {
+  width: 30px;
+  margin-left: 10px;
+}
+.contact main .form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+.contact main .form form section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contact main .form form section .gauche {
+  width: 25%;
+}
+.contact main .form form section .droite {
+  width: 65%;
+}
+.contact main .form form div {
+  display: flex;
+  flex-direction: column;
+}
+.contact main .form form div label {
+  text-transform: capitalize;
+}
+.contact main .form form div input, .contact main .form form div textarea, .contact main .form form div select {
+  background-color: #F2EFEF;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.contact main .form form div input:focus, .contact main .form form div textarea:focus {
+  border: 1px solid #191919;
+  outline-offset: 0px;
+  outline: none;
+}
+.contact main .form form .cta {
+  width: 12%;
+}
+.contact main .form form .cta button {
+  border: none;
+  background-color: #191919;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top: 20px;
 }/*# sourceMappingURL=style.css.map */
