@@ -32,21 +32,6 @@
   width: 0;
 }
 
-.line-container {
-  z-index: -5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-.line-container svg {
-  display: inline-block;
-  height: 100%;
-}
-
 .scroll {
   display: none;
 }
@@ -143,6 +128,22 @@
   100% {
     transform: scale(100%);
     -webkit-filter: grayscale(100%);
+  }
+}
+@-webkit-keyframes bg {
+  0% {
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+@keyframes bg {
+  0% {
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%);
   }
 }
 header {
@@ -449,56 +450,10 @@ body {
   height: 100vh;
   margin: 0;
 }
-
-.fond {
-  position: relative;
-  z-index: -1;
-  top: 0;
-}
-.fond .cercle:nth-child(1) {
-  position: absolute;
-  background-color: #faecea;
-  border-radius: 50%;
-  width: 700px;
-  height: 700px;
-  top: -150px;
-  left: -150px;
-}
-.fond .cercle:nth-child(2) {
-  position: absolute;
-  background-color: #faecea;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  top: 300px;
-  left: 500px;
-}
-.fond .cercle:nth-child(3) {
-  position: absolute;
-  background-color: #faecea;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  top: 180px;
-  left: 570px;
-}
-.fond .cercle:nth-child(4) {
-  position: absolute;
-  background-color: #faecea;
-  border-radius: 50%;
-  width: 500px;
-  height: 500px;
-  top: 500px;
-  right: -150px;
-}
-.fond .cercle:nth-child(3) {
-  position: absolute;
-  background-color: #faecea;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  top: 180px;
-  left: 570px;
+@media (min-width: 800px) {
+  body {
+    background-image: url(../images/noise.png);
+  }
 }
 
 .perso {
@@ -689,7 +644,6 @@ body {
   margin-top: 30px;
   width: 250px;
   border: 1px solid #191919;
-  background-color: #fff;
 }
 @media (min-width: 800px) {
   .perso .img .card {
@@ -1044,6 +998,10 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+  .projet .centre .front .titre #output {
+    display: flex;
+    flex-direction: row;
   }
   .projet .centre .front .titre h1 {
     text-transform: uppercase;
@@ -2486,9 +2444,11 @@ body {
   }
 }
 .contact main .haut .content .droite {
+  margin-top: -150px;
   width: 50%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .contact main .haut .content .droite .titre {
   width: 100%;
@@ -2534,6 +2494,11 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 15px;
+  transition: 0.5s;
+}
+.contact main .haut .content .droite .cta button:hover {
+  background-color: #191919;
+  color: #fff;
 }
 .contact main .haut .content .droite .txt {
   border-left: 1px #191919 solid;
