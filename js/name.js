@@ -55,6 +55,6 @@ function change(){
   counter++;
 };
 
-const inst = setInterval(change, 100);
+const inst = setInterval(change, 120);
 
 // -------------------------NAME-------------------------
