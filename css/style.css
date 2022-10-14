@@ -2298,11 +2298,16 @@ body {
   margin: auto;
 }
 .contact main .haut {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: 30px;
+}
+@media (min-width: 800px) {
+  .contact main .haut {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
 }
 .contact main .haut .titre {
   width: 100%;
@@ -2327,22 +2332,35 @@ body {
 }
 .contact main .haut .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 50px;
 }
+@media (min-width: 800px) {
+  .contact main .haut .content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+  }
+}
 .contact main .haut .content .gauche {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .gauche {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .contact main .haut .content .gauche .card {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 90%;
   border: 1px #191919 solid;
   background-color: #fff;
-  margin-left: 190px;
-  margin-bottom: -70px;
+  margin-top: 30px;
 }
 @media (min-width: 800px) {
   .contact main .haut .content .gauche .card {
@@ -2351,8 +2369,7 @@ body {
     width: 100%;
     border: 1px #191919 solid;
     background-color: #fff;
-    margin-left: 0px;
-    margin-bottom: 0px;
+    margin: 0;
   }
 }
 .contact main .haut .content .gauche .card .titre {
@@ -2506,17 +2523,33 @@ body {
   }
 }
 .contact main .haut .content .droite {
-  margin-top: -150px;
-  width: 50%;
+  margin-top: 50px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .droite {
+    margin-top: -150px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }
 .contact main .haut .content .droite .titre {
   width: 100%;
   margin: auto;
   text-align: center;
   align-items: center;
+  margin-bottom: 0;
+}
+.contact main .haut .content .droite .titre h3 {
+  position: relative;
+  font-size: 40px;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: 100;
 }
 @media (min-width: 800px) {
   .contact main .haut .content .droite .titre h3 {
@@ -2529,10 +2562,19 @@ body {
 }
 .contact main .haut .content .droite .titre p {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .droite .titre p {
+    text-transform: uppercase;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .contact main .haut .content .droite .titre p span {
   background-color: #191919;
@@ -2544,19 +2586,43 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 65%;
+  width: 70%;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .droite .cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%;
+    margin: auto;
+  }
 }
 .contact main .haut .content .droite .cta button {
   border: 1px #191919 solid;
   background-color: transparent;
   color: #191919;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 12px;
   transition: 0.5s;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .droite .cta button {
+    border: 1px #191919 solid;
+    background-color: transparent;
+    color: #191919;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: 0.5s;
+  }
 }
 .contact main .haut .content .droite .cta button:hover {
   background-color: #191919;
@@ -2566,35 +2632,70 @@ body {
   border-left: 1px #191919 solid;
   padding: 20px 0 20px 20px;
   color: grey;
-  width: 65%;
+  width: 90%;
   margin: auto;
+}
+@media (min-width: 800px) {
+  .contact main .haut .content .droite .txt {
+    border-left: 1px #191919 solid;
+    padding: 20px 0 20px 20px;
+    color: grey;
+    width: 65%;
+    margin: auto;
+  }
 }
 .contact main .haut .content img {
   width: 10%;
 }
 .contact main .form {
-  margin-top: 70px;
-  margin-bottom: 70px;
+  margin-top: 50px;
+  margin-bottom: 170px;
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 800px) {
+  .contact main .form {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .contact main .form .titre {
   display: flex;
   flex-direction: column;
 }
 .contact main .form .titre h3:nth-child(1) {
-  font-size: 40px;
+  font-size: 30px;
   text-transform: uppercase;
   font-weight: 100;
+}
+@media (min-width: 800px) {
+  .contact main .form .titre h3:nth-child(1) {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
 }
 .contact main .form .titre h3:nth-child(2) {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 100;
-  margin-top: -30px;
+  margin-top: -20px;
+}
+@media (min-width: 800px) {
+  .contact main .form .titre h3:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 100;
+    margin-top: -30px;
+  }
 }
 .contact main .form .titre h3:nth-child(2) svg {
   width: 30px;
@@ -2639,7 +2740,12 @@ body {
   outline: none;
 }
 .contact main .form form .cta {
-  width: 12%;
+  width: 40%;
+}
+@media (min-width: 800px) {
+  .contact main .form form .cta {
+    width: 12%;
+  }
 }
 .contact main .form form .cta button {
   border: none;
