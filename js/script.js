@@ -1,6 +1,6 @@
 "use strict"
 
-// -------------------------CURSOR-------------------------
+// TODO -------------------------CURSOR-------------------------
 
 let mouseCursor = document.querySelector(".cursor");
 
@@ -25,8 +25,8 @@ window.onscroll = function() {
   }
 };
 
-// -------------------------CURSOR-------------------------
-// -------------------------SCROLLBAR-------------------------
+// TODO -------------------------CURSOR-------------------------
+// ! -------------------------SCROLLBAR-------------------------
 
 let progress = document.getElementById('progressBar');
 let TotalHeight = document.body.scrollHeight - window.innerHeight;
@@ -44,8 +44,8 @@ function getScrollPercent() {
 return (h[st]) / ((h[sh]) - h.clientHeight) * 100;
 }
 
-// -------------------------SCROLLBAR-------------------------
-// -------------------------LINE-------------------------
+// ! -------------------------SCROLLBAR-------------------------
+// TODO -------------------------LINE-------------------------
 
 // let path = document.querySelector('path')
 // let pathLength = path.getTotalLength()
@@ -62,4 +62,7 @@ return (h[st]) / ((h[sh]) - h.clientHeight) * 100;
 
 // })
 
-// -------------------------LINE-------------------------
+// TODO -------------------------LINE-------------------------
+// * -------------------------LOADING-------------------------
+
+// * -------------------------LOADING-------------------------
