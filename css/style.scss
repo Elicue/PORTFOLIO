@@ -775,12 +775,12 @@ margin-top: 50px;
       // background-color: #fff;
 
       @include desktop {
-        width: 70%;
-          margin-left: 70px;
-          display: flex;
-          flex-direction: column;
-          border: $border-height color(noir) solid;
-          margin-top: -10%;
+        width: 80%;
+        margin-left: 70px;
+        display: flex;
+        flex-direction: column;
+        border: $border-height color(noir) solid;
+        margin-top: -10%;
       }
 
       .titre {
@@ -849,8 +849,8 @@ margin-top: 50px;
                   backdrop-filter: blur(10px);
                   background-color: rgba(255, 255, 255, 0.5);
                   position: absolute;
-                  width: 22%;
-                  height: 12%;
+                  width: 25%;
+                  height: 15%;
                   margin: 20% 0 5% 0;
                   padding: 10px;
               }
