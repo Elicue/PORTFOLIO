@@ -8,3 +8,7 @@ Or you can just clone the git project.
 
 To deploy the site,  (you must already have a Repository with your project) you first have to go  through Vercel [https://vercel.com](https://vercel.com/)
  , after you must link it to your Github account, and then your Repository to Vercel, and finally to activate Checkly.
+
+## ZAPIER
+
+I then used Zapier to create a connection between Github and discord, to send a message to each new commit.
