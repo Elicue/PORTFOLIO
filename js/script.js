@@ -14,7 +14,7 @@ function cursor(e) {
     mouseCursor.style.left = e.pageX + 'px';
 }
 
-// var className = "inverted";
+var className = "inverted";
 var className2 = "bg";
 var scrollTrigger = 1200;
 
