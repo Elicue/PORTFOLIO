@@ -1,6 +1,7 @@
 ## HOW TO ACCESS & INTSALL
 
 To download the files, click on the green "code" button, and once this is done, you just have to unzip them.
+then you can download the files, and once this is done, you just have to unzip them.
 
 Or you can just clone the git project.
 
