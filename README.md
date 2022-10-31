@@ -1,10 +1,6 @@
 ## HOW TO ACCESS & INTSALL
 
 To download the files, click on the green "code" button, and once this is done, you just have to unzip them.
-To access the repository, 
-
-[https://github.com/Elicue/PORTFOLIO](https://github.com/Elicue/PORTFOLIO)
-
 then you can download the files, and once this is done, you just have to unzip them.
 
 Or you can just clone the git project.

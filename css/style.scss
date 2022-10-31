@@ -145,15 +145,6 @@ display: none;
 }
 }
 
-// @keyframes bg {
-//   0% {
-//       transform: scale(105%);
-//   }
-//   100% {
-//       transform: scale(100%);
-//   }
-// }
-
 @keyframes loading-spin {
 from { transform: rotate(0deg); }
 to { transform: rotate(720deg); }
