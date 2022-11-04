@@ -5,26 +5,24 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  color: color(noir);
+  color: #191919;
   cursor: none;
 }
 
+.cursor {
+  display: none;
+}
 @media (min-width: 800px) {
   .cursor {
-    width: 3rem;
-    height: 3rem;
-    border: 1px solid #191919;
-    border-radius: 50%;
+    display: flex;
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  .cursor.bg {
-    background-color: #fff;
+    transform: rotate(-30deg);
   }
 }
+
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -89,42 +87,42 @@
 }
 @-webkit-keyframes gradient-animation-in {
   0% {
-    transform: scale(100%);
-    -webkit-filter: grayscale(100%);
+    transform: scale(1);
+    filter: grayscale(100%);
   }
   100% {
-    transform: scale(105%);
-    -webkit-filter: grayscale(0%);
+    transform: scale(1.05);
+    filter: grayscale(0%);
   }
 }
 @keyframes gradient-animation-in {
   0% {
-    transform: scale(100%);
-    -webkit-filter: grayscale(100%);
+    transform: scale(1);
+    filter: grayscale(100%);
   }
   100% {
-    transform: scale(105%);
-    -webkit-filter: grayscale(0%);
+    transform: scale(1.05);
+    filter: grayscale(0%);
   }
 }
 @-webkit-keyframes gradient-animation-out {
   0% {
-    transform: scale(105%);
-    -webkit-filter: grayscale(0%);
+    transform: scale(1.05);
+    filter: grayscale(0%);
   }
   100% {
-    transform: scale(100%);
-    -webkit-filter: grayscale(100%);
+    transform: scale(1);
+    filter: grayscale(100%);
   }
 }
 @keyframes gradient-animation-out {
   0% {
-    transform: scale(105%);
-    -webkit-filter: grayscale(0%);
+    transform: scale(1.05);
+    filter: grayscale(0%);
   }
   100% {
-    transform: scale(100%);
-    -webkit-filter: grayscale(100%);
+    transform: scale(1);
+    filter: grayscale(100%);
   }
 }
 @-webkit-keyframes loading-spin {
@@ -141,28 +139,6 @@
   }
   to {
     transform: rotate(720deg);
-  }
-}
-@-webkit-keyframes loading-bar {
-  0% {
-    transform: scale(0%);
-  }
-  50% {
-    transform: scale(100%);
-  }
-  100% {
-    transform: scale(0%);
-  }
-}
-@keyframes loading-bar {
-  0% {
-    transform: scale(0%);
-  }
-  50% {
-    transform: scale(100%);
-  }
-  100% {
-    transform: scale(0%);
   }
 }
 header {
@@ -447,6 +423,10 @@ footer .bas .menu span {
     width: 20px;
   }
 }
+footer .bas .menu a {
+  text-decoration: none;
+  color: #191919;
+}
 footer .bas .menu p {
   text-transform: uppercase;
   font-size: 17px;
@@ -474,41 +454,30 @@ footer .bas .bwp {
   position: fixed;
   inset: 0;
   background-color: #FDF6F8;
-  background-image: url(../images/noise.png);
+  background-image: url(../images/noise.svg);
   border-top: solid 5px #191919;
   pointer-events: none;
   height: 100Vh;
   width: 100%;
   z-index: 10;
+  cursor: pointer;
 }
 .loading .logo {
-  aspect-ratio: 1;
-  min-width: 100px;
-  transform-origin: bottom;
+  aspect-ratio: 1/1;
+  z-index: 20;
+  transition: all 0.2s ease-in-out;
 }
 .loading .logo img:nth-child(1) {
-  width: 25vh;
+  z-index: 15;
+  width: 40vh;
   position: absolute;
 }
 .loading .logo img:nth-child(2) {
-  width: 25vh;
-  -webkit-animation: loading-spin 5s infinite ease;
-          animation: loading-spin 5s infinite ease;
+  width: 40vh;
 }
-.loading .loading-bar {
-  width: 20%;
-  background-color: transparent;
-  border: 1px solid #191919;
-  height: 10px;
-  border-radius: 50px;
-}
-.loading .loading-bar .bar {
-  height: 100%;
+.loading .logo .size {
   width: 100%;
-  background-color: #e8c9c4;
-  border-radius: 50px;
-  -webkit-animation: loading-bar 10s;
-          animation: loading-bar 10s;
+  transform: scale(20);
 }
 
 body {
@@ -576,6 +545,7 @@ body {
   }
   .perso .ecrit .content span {
     display: block;
+    color: grey;
   }
 }
 .perso .ecrit .content p {
@@ -620,7 +590,7 @@ body {
 .perso .ecrit .cta button:hover {
   -webkit-animation: gradient-animation-in 0.5s ease;
           animation: gradient-animation-in 0.5s ease;
-  transform: scale(105%);
+  transform: scale(1.05);
 }
 .perso .ecrit .arrow {
   display: none;
@@ -649,6 +619,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 45%;
+    height: 100%;
     margin-top: 75px;
   }
 }
@@ -661,9 +632,9 @@ body {
 }
 .perso .img .logo img:nth-child(1) {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 50%;
+  top: 10px;
+  right: 10px;
+  width: 40%;
   z-index: 5;
   transform: rotate(15deg);
 }
@@ -744,6 +715,7 @@ body {
   width: 90%;
   margin: auto;
   margin-top: 70px;
+  height: 70%;
 }
 @media (min-width: 800px) {
   .perso .img .card .image {
@@ -754,15 +726,15 @@ body {
   }
   .perso .img .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .perso .img .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.3s ease;
             animation: gradient-animation-in 0.3s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .perso .img .card .image img {
@@ -802,7 +774,7 @@ body {
 }
 .perso .img .card .image .flou .titre h3 {
   font-size: 12px;
-  text-transform: capitalize;
+  text-transform: none;
 }
 @media (min-width: 800px) {
   .perso .img .card .image .flou .titre h3 {
@@ -833,13 +805,14 @@ body {
   }
 }
 .perso .img .card .image .flou .bas h3 {
+  font-weight: 100;
   font-size: 10px;
   margin-left: 5px;
 }
 @media (min-width: 800px) {
   .perso .img .card .image .flou .bas h3 {
-    font-size: 20px;
-    margin: 25px 0 0 5px;
+    font-size: 15px;
+    margin: 25px 0 -20px 5px;
   }
 }
 .perso .img .card .image .flou .bas button {
@@ -929,9 +902,19 @@ body {
   width: 90%;
   margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+}
+@media (min-width: 800px) {
+  .projet {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
 }
 .projet .gauche {
   display: none;
@@ -980,7 +963,7 @@ body {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
     filter: grayscale(0%);
-    transform: scale(105%);
+    transform: scale(1.05);
   }
 }
 .projet .gauche .card .desc {
@@ -1027,13 +1010,10 @@ body {
 .projet .gauche .cta button:hover {
   -webkit-animation: gradient-animation-in 0.5s ease;
           animation: gradient-animation-in 0.5s ease;
-  transform: scale(105%);
+  transform: scale(1.05);
 }
 .projet .centre {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  margin-top: -80px;
+  display: none;
 }
 @media (min-width: 800px) {
   .projet .centre {
@@ -1168,7 +1148,7 @@ body {
     -webkit-animation: gradient-animation-in 0.3s ease;
             animation: gradient-animation-in 0.3s ease;
     filter: grayscale(0%);
-    transform: scale(105%);
+    transform: scale(1.05);
   }
 }
 .projet .centre .card .desc {
@@ -1216,11 +1196,7 @@ body {
   }
 }
 .projet .front {
-  width: 60%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  margin-top: -50px;
+  display: none;
 }
 @media (min-width: 800px) {
   .projet .front {
@@ -1261,6 +1237,239 @@ body {
   text-align: right;
   color: grey;
   font-size: 15px;
+}
+.projet section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: -50px;
+  justify-content: space-between;
+}
+.projet section .test {
+  display: flex;
+  width: 60%;
+}
+@media (min-width: 800px) {
+  .projet section .test {
+    display: none;
+  }
+}
+.projet section .test .front {
+  display: none;
+}
+@media (min-width: 800px) {
+  .projet section .test .front {
+    margin-top: -50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .projet section .test .front .titre {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .projet section .test .front .titre #output {
+    display: flex;
+    flex-direction: row;
+  }
+  .projet section .test .front .titre h1 {
+    text-transform: uppercase;
+    font-size: 70px;
+  }
+  .projet section .test .front .titre p {
+    display: flex;
+    text-align: end;
+    font-size: 50px;
+    text-transform: uppercase;
+    align-items: center;
+  }
+  .projet section .test .front .titre p span {
+    margin: auto;
+    height: 2px;
+    background-color: #191919;
+    width: 25%;
+  }
+  .projet section .test .front .content {
+    margin-top: 70px;
+    display: flex;
+    text-align: end;
+    width: 80%;
+    margin-left: 40px;
+    margin-left: 10%;
+    border-right: 1px #191919 solid;
+    padding: 20px 20px 20px 0;
+    color: grey;
+    font-size: 20px;
+  }
+  .projet section .test .front .content p {
+    font-size: 20px;
+  }
+}
+.projet section .test .card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 80%;
+  border: 1px solid #191919;
+  height: 80%;
+  background-color: #fff;
+}
+@media (min-width: 800px) {
+  .projet section .test .card {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 1px #191919 solid;
+    margin-top: 50px;
+  }
+}
+.projet section .test .card .titre {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .titre {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+.projet section .test .card .titre h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .titre h3 {
+    font-size: 20px;
+  }
+}
+.projet section .test .card .titre p {
+  color: grey;
+  font-size: 10px;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .titre p {
+    font-size: 15px;
+  }
+}
+.projet section .test .card .image {
+  width: 90%;
+  margin: auto;
+  height: 60%;
+  margin-top: -1px;
+}
+.projet section .test .card .image img {
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .image img {
+    width: 100%;
+    filter: grayscale(100%);
+    -webkit-animation: gradient-animation-out 0.5s ease;
+            animation: gradient-animation-out 0.5s ease;
+  }
+  .projet section .test .card .image img:hover {
+    -webkit-animation: gradient-animation-in 0.3s ease;
+            animation: gradient-animation-in 0.3s ease;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+}
+.projet section .test .card .desc {
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .desc {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.projet section .test .card .desc .left {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.projet section .test .card .desc .left p {
+  color: grey;
+  font-size: 10px;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .desc .left p {
+    font-size: 15px;
+  }
+}
+.projet section .test .card .desc .left h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+@media (min-width: 800px) {
+  .projet section .test .card .desc .left h3 {
+    margin-top: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+}
+.projet section .test2 {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.projet section .test2 .titre {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projet section .test2 .titre h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: left;
+}
+.projet section .test2 .titre p {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 25px;
+  align-items: center;
+}
+.projet section .test2 .titre p span {
+  width: 30px;
+  height: 1px;
+  background-color: #191919;
+  margin: 0 10px 0 0;
+}
+.projet section .test2 .content {
+  border-right: 1px solid #191919;
+  padding: 10px 8px;
+  margin-top: 20px;
+  width: 110%;
+  margin-left: -20px;
+}
+.projet section .test2 .content p {
+  text-align: right;
+  color: grey;
+  font-size: 15px;
+}
+@media (min-width: 800px) {
+  .projet section {
+    display: none;
+  }
 }
 .projet .droite {
   display: none;
@@ -1319,7 +1528,7 @@ body {
   flex-direction: column;
   width: 90%;
   margin: auto;
-  margin-top: -50px;
+  margin-top: 50px;
 }
 @media (min-width: 800px) {
   .plus {
@@ -1353,12 +1562,13 @@ body {
 }
 .plus .bas .cta {
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: space-between;
 }
 .plus .bas .cta button {
+  text-transform: uppercase;
   border: none;
-  font-size: 12px;
+  font-size: 15px;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   justify-content: left;
@@ -1552,15 +1762,15 @@ body {
 @media (min-width: 800px) {
   .projets main .haut .gauche .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .projets main .haut .gauche .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .projets main .haut .gauche .card .image img {
@@ -1843,7 +2053,7 @@ body {
   -webkit-animation: gradient-animation-in 0.5s ease;
           animation: gradient-animation-in 0.5s ease;
   filter: grayscale(0%);
-  transform: scale(105%);
+  transform: scale(1.05);
 }
 .projets main .haut .txt .content .left .txt .cta a:nth-child(2) {
   display: none;
@@ -1930,15 +2140,15 @@ body {
 @media (min-width: 800px) {
   .projets main .haut .txt .content .right .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .projets main .haut .txt .content .right .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .projets main .haut .txt .content .right .card .image img {
@@ -2101,15 +2311,15 @@ body {
 @media (min-width: 800px) {
   .projets main .centre .left .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .projets main .centre .left .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .projets main .centre .left .card .image img {
@@ -2350,7 +2560,7 @@ body {
 .projets main .centre .center .content .cta button:hover {
   -webkit-animation: gradient-animation-in 0.5s ease;
           animation: gradient-animation-in 0.5s ease;
-  transform: scale(105%);
+  transform: scale(1.05);
 }
 .projets main .centre .center .content .cta a:nth-child(1) button {
   background-color: #191919;
@@ -2537,7 +2747,7 @@ body {
 .projets main .scss .center .content .cta button:hover {
   -webkit-animation: gradient-animation-in 0.5s ease;
           animation: gradient-animation-in 0.5s ease;
-  transform: scale(105%);
+  transform: scale(1.05);
 }
 .projets main .scss .center .content .cta a:nth-child(2) button {
   background-color: #191919;
@@ -2616,15 +2826,15 @@ body {
 @media (min-width: 800px) {
   .projets main .scss .left .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .projets main .scss .left .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .projets main .scss .left .card .image img {
@@ -2789,15 +2999,15 @@ body {
 @media (min-width: 800px) {
   .projets main .centre:nth-child(4) .left .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .projets main .centre:nth-child(4) .left .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .projets main .centre:nth-child(4) .left .card .image img {
@@ -3045,15 +3255,15 @@ body {
 @media (min-width: 800px) {
   .contact main .haut .content .gauche .card .image img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
   }
   .contact main .haut .content .gauche .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.5s ease;
             animation: gradient-animation-in 0.5s ease;
-    -webkit-filter: grayscale(0%);
-    transform: scale(105%);
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 }
 .contact main .haut .content .gauche .card .image img {
@@ -3368,7 +3578,7 @@ body {
   outline: none;
 }
 .contact main .form form .cta {
-  width: 40%;
+  width: 50%;
 }
 @media (min-width: 800px) {
   .contact main .form form .cta {

@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Tangerine:wght@400;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    color: color(noir);
-    cursor: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #191919;
+  cursor: none;
 }
 
 $colors :(
@@ -33,27 +33,16 @@ $desktop :800px;
   }
 }
 
-@include desktop {
-  .cursor {
-    width: 3rem;
-    height: 3rem;
-    border: $border-height solid color( noir);
-    border-radius: 50%;
+.cursor {
+  display: none;
+
+  @include desktop {
+    display: flex;
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.5);
-    // mix-blend-mode: difference;
-    // background-color: #fff;
-  }   
-
-  .cursor.inverted {
-    // mix-blend-mode: difference;
-  }
-
-  .cursor.bg {
-    background-color: #fff;
+    transform: rotate(-30deg);
   }
 
 }
@@ -125,41 +114,29 @@ display: none;
 
 @keyframes gradient-animation-in {
 0% {
-  transform: scale(100%);
-  -webkit-filter: grayscale(100%);
+  transform: scale(1);
+    filter: grayscale(100%);
 }
 100% {
-  transform: scale(105%);
-  -webkit-filter: grayscale(0%);
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 }
 
 @keyframes gradient-animation-out {
 0% {
-  transform: scale(105%);
-  -webkit-filter: grayscale(0%);
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 100% {
-  transform: scale(100%);
-  -webkit-filter: grayscale(100%);
+  transform: scale(1);
+  filter: grayscale(100%);
 }
 }
 
 @keyframes loading-spin {
 from { transform: rotate(0deg); }
 to { transform: rotate(720deg); }
-}
-
-@keyframes loading-bar {
-  0% {
-      transform: scale(0%);
-  }
-  50% {
-      transform: scale(100%);
-  }
-  100% {
-      transform: scale(0%);
-  }
 }
 
 // ! -------------------------KEYFRAME-------------------------
@@ -458,9 +435,14 @@ footer {
             }
         }
 
+        a {
+          text-decoration: none;
+          color: color(noir);
+        }
+
         p {
-            text-transform: uppercase;
-            font-size: 17px;
+          text-transform: uppercase;
+          font-size: 17px;
         }
     }
 
@@ -483,54 +465,44 @@ footer {
 // ? -------------------------LOADING-------------------------
 
 .loading {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-gap: 4rem;
-position: fixed;
-inset: 0;
-background-color: color(blanc);
-background-image: url(../images/noise.png);
-border-top: solid 5px color(noir);
-pointer-events: none;
-height: 100Vh;
-width: 100%;
-z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  position: fixed;
+  inset: 0;
+  background-color: color(blanc);
+  background-image: url(../images/noise.svg);
+  border-top: solid 5px color(noir);
+  pointer-events: none;
+  height: 100Vh;
+  width: 100%;
+  z-index: 10;
+  cursor: pointer;
 
-.logo {
-    aspect-ratio: 1;
-    min-width: 100px;
-    transform-origin: bottom;
+  .logo {
+    aspect-ratio: 1/1;
+    z-index: 20;
+    transition: all .2s ease-in-out;
 
     img:nth-child(1) {
-        width: 25vh;
-        position: absolute;
+      z-index: 15;
+      width: 40vh;
+      position: absolute;
     }
 
     img:nth-child(2) {
-        width: 25vh;
-        animation: loading-spin 5s infinite ease;
+      width: 40vh;
+      // animation: loading-spin 5s infinite ease;
     }
-}
+  }
 
-.loading-bar {
-  width: 20%;
-  background-color: transparent;
-  border: $border-height solid color(noir);
-  height: 10px;
-  border-radius: 50px;
-
-  .bar {
-    height: 100%;
+  .logo .size{
     width: 100%;
-    background-color: color(primary);
-    border-radius: 50px;
-    animation: loading-bar 10s ;
+    transform: scale(20);
   }
 }
-}
-
 
 // ? -------------------------LOADING-------------------------
 // TODO -------------------------BODY-------------------------
@@ -550,13 +522,13 @@ body {
 // TODO -------------------------PERSO-------------------------
 
 .perso {
-display: flex;
-flex-direction: row;
-width: 90%;
-margin: auto;
-margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
 
-.ecrit {
+  .ecrit {
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -613,6 +585,7 @@ margin-top: 50px;
 
           span {
               display: block;
+              color: color(gris);
           }
       }
 
@@ -629,13 +602,13 @@ margin-top: 50px;
   }
 
   .cta {
-    margin-top: 50px;
+      margin-top: 50px;
 
-    @include desktop {
-        margin-top: 50px;
-    }
+      @include desktop {
+          margin-top: 50px;
+      }
 
-    button {
+      button {
       background-color: color(noir);
       border: none;
       color: #fff;
@@ -645,20 +618,20 @@ margin-top: 50px;
       animation: gradient-animation-out .5s ease;
 
       @include desktop {
-        background-color: color(noir);
-        border: none;
-        color: #fff;
-        padding: 0.5em 1.5em;
-        font-size: 25px;
-        cursor: pointer;
+          background-color: color(noir);
+          border: none;
+          color: #fff;
+          padding: 0.5em 1.5em;
+          font-size: 25px;
+          cursor: pointer;
       }
-    }
+      }
 
-    button:hover {
-        animation: gradient-animation-in .5s ease;
-        transform: scale(105%);
-    }
-}
+      button:hover {
+          animation: gradient-animation-in .5s ease;
+          transform: scale(1.05);
+      }
+  }
 
   .arrow {
       display: none;
@@ -677,22 +650,23 @@ margin-top: 50px;
           }
       }
   }
-}
-
-.img {
-  width: 55%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-
-  @include desktop {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    margin-top: 75px;
   }
 
-  .logo {
+  .img {
+    width: 55%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      height: 100%;
+      margin-top: 75px;
+    }
+
+    .logo {
       display: flex;
       position: relative;
       margin-bottom: 30px;
@@ -700,41 +674,41 @@ margin-top: 50px;
       width: 100%;
 
       img:nth-child(1) {
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          width: 50%;
-          z-index: 5;
-          transform: rotate(15deg);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40%;
+        z-index: 5;
+        transform: rotate(15deg);
       }
 
       img:nth-child(2) {
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          width: 50%;
-          background-color: #fff;
-          border: 8px solid #fff;
-          border-radius: 50%;
-          animation: spin 10s linear infinite
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 50%;
+        background-color: #fff;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        animation: spin 10s linear infinite
       }
 
-      @include desktop {
-        display: flex;
-        position: absolute;
-        right: 32%;
-        margin-bottom: 20%;
-        width: 25%;
+        @include desktop {
+          display: flex;
+          position: absolute;
+          right: 32%;
+          margin-bottom: 20%;
+          width: 25%;
 
-        img:nth-child(1) {
+          img:nth-child(1) {
           position: absolute;
           top: 0px;
           right: 0px;
           width: 40%;  
           transform: rotate(-15deg);
-        }
+          }
 
-        img:nth-child(2) {
+          img:nth-child(2) {
           position: absolute;
           top: 0px;
           right: 0px;
@@ -742,238 +716,240 @@ margin-top: 50px;
           animation: spin 10s linear infinite;
           background-color: transparent;
           border: none;
+          }
         }
       }
-  }
 
-  .card {
-      display: flex;
-      flex-direction:column;
-      margin-top: 30px;
-      width: 250px;
-      border: 1px solid color(noir);
-      // background-color: #fff;
-
-      @include desktop {
-        width: 80%;
-        margin-left: 70px;
+    .card {
         display: flex;
-        flex-direction: column;
-        border: $border-height color(noir) solid;
-        margin-top: -10%;
-      }
+        flex-direction:column;
+        margin-top: 30px;
+        width: 250px;
+        border: 1px solid color(noir);
+        // background-color: #fff;
 
-      .titre {
-          display: none;
+        @include desktop {
+            width: 80%;
+            margin-left: 70px;
+            display: flex;
+            flex-direction: column;
+            border: $border-height color(noir) solid;
+            margin-top: -10%;
+        }
 
-          @include desktop {
-              display: flex;
-              flex-direction: row;
-              width: 100%;
-              justify-content: space-between;
-              padding: 20px;
-          }
+        .titre {
+            display: none;
 
-          h3 {
-              font-size: 20px;
-              text-transform: uppercase;
-          }
+            @include desktop {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                padding: 20px;
+            }
 
-          p {
-              color: color(gris);
-          }
-      }
+            h3 {
+                font-size: 20px;
+                text-transform: uppercase;
+            }
 
-      .image {
-          width: 90%;
-          margin: auto;
-          margin-top: 70px;
+            p {
+                color: color(gris);
+            }
+        }
 
-          @include desktop {
-              width: 90%;
-              display: flex;
-              flex-direction: column;
-              margin: auto;
+        .image {
+            width: 90%;
+            margin: auto;
+            margin-top: 70px;
+            height: 70%;
 
-              img {
-                  width: 100%;
-                  -webkit-filter: grayscale(100%);
-                  animation: gradient-animation-out .5s ease;
-              }
+            @include desktop {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                margin: auto;
 
-              img:hover {
-                  animation: gradient-animation-in .3s ease;
-                  -webkit-filter: grayscale(0%);
-                  transform: scale(105%);
-              }
-          }
+                img {
+                    width: 100%;
+                    filter: grayscale(100%);
+                    animation: gradient-animation-out .5s ease;
+                }
 
-          img {
-              width: 100%;
-          }
+                img:hover {
+                    animation: gradient-animation-in .3s ease;
+                    filter: grayscale(0%);
+                    transform: scale(1.05);
+                }
+            }
 
-          .flou {
-              display: flex;
-              flex-direction: column;
-              backdrop-filter: blur(10px);
-              height: 60px;
-              width: 45%;
-              background-color: rgba(255, 255, 255, 0.5);
-              position: absolute;
-              margin: -80px 0 0 15px;
-              padding: 5px;
+            img {
+                width: 100%;
+            }
 
-              @include desktop {
-                  display: flex;
-                  flex-direction: column;
-                  backdrop-filter: blur(10px);
-                  background-color: rgba(255, 255, 255, 0.5);
-                  position: absolute;
-                  width: 25%;
-                  height: 15%;
-                  margin: 20% 0 5% 0;
-                  padding: 10px;
-              }
+            .flou {
+                display: flex;
+                flex-direction: column;
+                backdrop-filter: blur(10px);
+                height: 60px;
+                width: 45%;
+                background-color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                margin: -80px 0 0 15px;
+                padding: 5px;
 
-              .titre {
-                  width: 100%;
-                  padding: 5px;
-                  display: flex;
-                  flex-direction: column;
+                @include desktop {
+                    display: flex;
+                    flex-direction: column;
+                    backdrop-filter: blur(10px);
+                    background-color: rgba(255, 255, 255, 0.5);
+                    position: absolute;
+                    width: 25%;
+                    height: 15%;
+                    margin: 20% 0 5% 0;
+                    padding: 10px;
+                }
 
-                  h3 {
-                      font-size: 12px;
-                      text-transform: capitalize;
+                .titre {
+                    width: 100%;
+                    padding: 5px;
+                    display: flex;
+                    flex-direction: column;
 
-                      @include desktop {
-                          font-size: 20px;
-                      }
-                  }
+                    h3 {
+                        font-size: 12px;
+                        text-transform: none;
 
-                  p {
-                      font-size:  10px;
-                      color: color(gris);
-                      
-                      @include desktop{
-                          font-size: 15px;
-                      }
-                  }
-              }
+                        @include desktop {
+                            font-size: 20px;
+                        }
+                    }
 
-              .bas {
-                  align-items: center;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
+                    p {
+                        font-size:  10px;
+                        color: color(gris);
+                        
+                        @include desktop{
+                            font-size: 15px;
+                        }
+                    }
+                }
 
-                  @include desktop {
-                      width: 100%;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: space-between;
-                  }
+                .bas {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
 
-                  h3 {
-                      font-size: 10px;
-                      margin-left: 5px;
+                    @include desktop {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
 
-                      @include desktop {
-                          font-size: 20px;
-                          margin: 25px 0 0 5px;
-                      }
-                  }
+                    h3 {
+                      font-weight: 100;
+                        font-size: 10px;
+                        margin-left: 5px;
 
-                  button {
-                      margin-top: -5px;
-                      background-color: color(noir);
-                      border: none;
-                      width: 20px;
-                      height: 20px;
+                        @include desktop {
+                            font-size: 15px;
+                            margin: 25px 0 -20px 5px;
+                        }
+                    }
 
-                      @include desktop {
-                          background-color: color(noir);
-                          width: 45px;
-                          height: 45px;
-                          border: none;
-                      }
+                    button {
+                        margin-top: -5px;
+                        background-color: color(noir);
+                        border: none;
+                        width: 20px;
+                        height: 20px;
 
-                      svg {
-                          color: #fff;
-                          margin-top: 2px;
-                          width: 90%;
-                          height: 90%;
-                      }
-                  }
-              }
-          }
-      }
+                        @include desktop {
+                            background-color: color(noir);
+                            width: 45px;
+                            height: 45px;
+                            border: none;
+                        }
 
-      .desc {
-          width: 90%;
-          margin: auto;
-          display: flex;
-          flex-direction: row;
-          margin: 10px;
-          justify-content: space-between;
+                        svg {
+                            color: #fff;
+                            margin-top: 2px;
+                            width: 90%;
+                            height: 90%;
+                        }
+                    }
+                }
+            }
+        }
 
-          @include desktop {
-              display: flex;
-              width: 90%;
-              margin: auto;
-              flex-direction: row;
-              justify-content: space-between;
-              margin-top: 20px;
-              margin-bottom: 20px;
-          }
+        .desc {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            justify-content: space-between;
 
-          .gauche {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
+            @include desktop {
+                display: flex;
+                width: 90%;
+                margin: auto;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
 
-              p {
-                  font-size: 10px;
-                  color: color(gris);
-                  margin-top: -5px;
-                  
-                  @include desktop {
-                      font-size: 15px;
-                  }
-              }
+            .gauche {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
-              h3 {
-                  font-size: 12px;
-                  text-transform: uppercase;
-                  margin-top: 5px;
+                p {
+                    font-size: 10px;
+                    color: color(gris);
+                    margin-top: -5px;
+                    
+                    @include desktop {
+                        font-size: 15px;
+                    }
+                }
 
-                  @include desktop {
-                      text-transform: uppercase;
-                      margin-top: 10px;
-                  }
-              }
-          }
+                h3 {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    margin-top: 5px;
 
-          .droite {
+                    @include desktop {
+                        text-transform: uppercase;
+                        margin-top: 10px;
+                    }
+                }
+            }
 
-              button {
-                  background-color: color(noir);
-                  border: none;
-                  color: #fff;
-                  font-size: 12px;
-                  padding: 0.5rem 1rem;
-                  cursor: pointer;
+            .droite {
 
-                  @include desktop {
-                      background-color: color(noir);
-                      color: #fff;
-                      border: none;
-                      padding: 1em 2.5em;
-                  }
-              }
-          }
-      }
-  }
-}
+                button {
+                    background-color: color(noir);
+                    border: none;
+                    color: #fff;
+                    font-size: 12px;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+
+                    @include desktop {
+                        background-color: color(noir);
+                        color: #fff;
+                        border: none;
+                        padding: 1em 2.5em;
+                    }
+                }
+            }
+        }
+    }
+    }
 
 }
 
@@ -984,9 +960,18 @@ margin-top: 50px;
   width: 90%;
   margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+
+  @include desktop {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
 
   .gauche {
     display: none;
@@ -1023,23 +1008,23 @@ margin-top: 50px;
         }
 
         .image {
-            width: 90%;
-            margin: auto;
+          width: 90%;
+          margin: auto;
 
-            @include desktop {
+          @include desktop {
 
-                img {
-                    width: 100%;
-                    filter: grayscale(100%);
-                    animation: gradient-animation-out .5s ease;
-                }
-
-                img:hover {
-                    animation: gradient-animation-in .5s ease;
-                    filter: grayscale(0%);
-                    transform: scale(105%);
-                }
+            img {
+              width: 100%;
+              filter: grayscale(100%);
+              animation: gradient-animation-out .5s ease;
             }
+
+            img:hover {
+              animation: gradient-animation-in .5s ease;
+              filter: grayscale(0%);
+              transform: scale(1.05);
+            }
+          }
         }
 
         .desc {
@@ -1090,23 +1075,20 @@ margin-top: 50px;
 
       button:hover {
           animation: gradient-animation-in .5s ease;
-          transform: scale(105%);
+          transform: scale(1.05);
       }
   }
   }
 
   .centre {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    margin-top: -80px;
+    display: none;
 
     @include desktop {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -200px;
-        margin-right: 50px;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      margin-top: -200px;
+      margin-right: 50px;
     }
 
     .front {
@@ -1239,7 +1221,7 @@ margin-top: 50px;
               img:hover {
                 animation: gradient-animation-in .3s ease;
                 filter: grayscale(0%);
-                transform: scale(105%);
+                transform: scale(1.05);
               }
             }
 
@@ -1293,11 +1275,7 @@ margin-top: 50px;
   }
 
   .front {
-    width: 60%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    margin-top: -50px;
+    display: none;
 
     @include desktop {
         display: none;
@@ -1342,6 +1320,257 @@ margin-top: 50px;
             color: color(gris);
             font-size: 15px;
         }
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: -50px;
+    justify-content: space-between;
+
+    .test {
+      display: flex;
+      width: 60%;
+
+      @include desktop {
+        display: none;
+      }
+
+      .front {
+          display: none;
+
+        @include desktop {
+            margin-top: -50px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .titre {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+
+              #output {
+                display: flex;
+                flex-direction: row;
+              }
+
+              h1 {
+                text-transform: uppercase;
+                font-size: 70px;
+              }
+
+              p {
+                display: flex;
+                text-align: end;
+                font-size: 50px;
+                text-transform: uppercase;
+                align-items: center;
+
+                span {
+                    margin: auto;
+                    height: 2px;
+                    background-color: color(noir);
+                    width: 25%;
+                }
+              }
+            }
+
+              .content {
+                margin-top: 70px;
+                display: flex;
+                text-align: end;
+                width: 80%;
+                margin-left: 40px;
+                margin-left: 10%;
+                border-right: $border-height color(noir) solid;
+                padding: 20px 20px 20px 0;
+                color: color(gris);
+                font-size: 20px;
+
+                p {
+                  font-size: 20px;
+                }
+              }
+          }
+      }
+
+      .card {
+          display: flex;
+          flex-direction:column;
+          margin-top: 30px;
+          width: 80%;
+          border: 1px solid color(noir);
+          height: 80%;
+          background-color: #fff;
+
+          @include desktop {
+              display: flex;
+              flex-direction: column;
+              width: 90%;
+              border: $border-height color(noir) solid;
+              margin-top: 50px;
+          }
+
+          .titre {
+              width: 90%;
+              margin: auto;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              align-items: center;
+
+              @include desktop {
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+              }
+
+              h3 {
+                  font-size: 12px;
+                  text-transform: uppercase;
+
+                  @include desktop{
+                      font-size: 20px;
+                  }
+              }
+
+              p {
+                  color: color(gris);
+                  font-size: 10px;
+
+                  @include desktop {
+                      font-size: 15px;
+                  }
+              }
+          }
+
+          .image {
+              width: 90%;
+              margin: auto;
+              height: 60%;
+              margin-top: -1px;
+
+              img {
+                width: 100%;
+              }
+
+              @include desktop {
+                img {
+                  width: 100%;
+                  filter: grayscale(100%);
+                  animation: gradient-animation-out .5s ease;
+                }
+    
+                img:hover {
+                  animation: gradient-animation-in .3s ease;
+                  filter: grayscale(0%);
+                  transform: scale(1.05);
+                }
+              }
+
+          }
+
+          .desc {
+              align-items: center;
+              margin: auto;
+              width: 90%;
+              display: flex;
+              flex-direction: row;
+              margin-top: 5px;
+              justify-content: space-between;
+
+              @include desktop {
+                  width: 90%;
+                  margin: auto;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+              }
+
+              .left {
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+                  display: flex;
+                  flex-direction: column;
+
+                  p {
+                      color: color(gris);
+                      font-size: 10px;
+
+                      @include desktop {
+                          font-size: 15px;
+                      }
+                  }
+
+                  h3 {
+                      font-size: 12px;
+                      text-transform: uppercase;
+
+                      @include desktop {
+                          margin-top: 10px;
+                          font-size: 15px;
+                          text-transform: uppercase;
+                      }
+                  }
+              }
+          }
+      }
+    }
+
+    .test2 {
+      display: flex;
+      width: 40%;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .titre {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          h1 {
+              text-transform: uppercase;
+              font-size: 30px;
+              text-align: left;
+          }
+
+          p {
+              display: flex;
+              text-transform: uppercase;
+              font-size: 25px;
+              align-items: center;
+
+              span {
+                  width: 30px;
+                  height: $border-height;
+                  background-color: color(noir);
+                  margin: 0 10px 0 0;
+              }
+          }
+      }
+
+      .content {
+          border-right: $border-height solid color(noir);
+          padding:10px 8px;
+          margin-top: 20px;
+          width: 110%;
+          margin-left: -20px;
+
+          p {
+              text-align: right;
+              color: color(gris);
+              font-size: 15px;
+          }
+      }
+    }
+
+    @include desktop {
+      display: none;
     }
   }
 
@@ -1416,7 +1645,7 @@ display: flex;
 flex-direction: column;
 width: 90%;
 margin: auto;
-margin-top: -50px;
+margin-top: 50px;
 
 @include desktop {
   display: none;
@@ -1453,12 +1682,13 @@ margin-top: -50px;
 
   .cta {
       display: flex;
-      width: 50%;
+      width: 100%;
       justify-content: space-between;
 
       button {
+        text-transform: uppercase;
           border: none;
-          font-size: 12px;
+          font-size: 15px;
           padding: 0.5rem 1.5rem;
           cursor: pointer;
           justify-content: left;
@@ -1672,14 +1902,14 @@ overflow-x: hidden;
     
                         img {
                             width: 100%;
-                            -webkit-filter: grayscale(100%);
+                            filter: grayscale(100%);
                             animation: gradient-animation-out .5s ease;
                         }
         
                         img:hover {
                             animation: gradient-animation-in .5s ease;
-                            -webkit-filter: grayscale(0%);
-                            transform: scale(105%);
+                            filter: grayscale(0%);
+                            transform: scale(1.05);
                         }
                     }
     
@@ -1735,19 +1965,6 @@ overflow-x: hidden;
 
                 .fond {
                     display: none;
-
-                    // @include desktop {
-                    //     display: block;
-                    //     position: absolute;
-                    //     border-radius: 50%;
-                    //     width: 140px;
-                    //     height: 140px;
-                    //     backdrop-filter: blur(10px);
-                    //     background-color: rgba(255, 255, 255, 0.5);
-                    //     margin-top: 550px;
-                    //     margin-left: 310px;
-                    //     z-index: 1;
-                    // }
                 }
 
                 .logo {
@@ -1998,7 +2215,7 @@ overflow-x: hidden;
                           button:hover {
                             animation: gradient-animation-in .5s ease;
                             filter: grayscale(0%);
-                            transform: scale(105%);
+                            transform: scale(1.05);
                           }
 
                           a:nth-child(2) {
@@ -2093,14 +2310,14 @@ overflow-x: hidden;
             
                                 img {
                                     width: 100%;
-                                    -webkit-filter: grayscale(100%);
+                                    filter: grayscale(100%);
                                     animation: gradient-animation-out .5s ease;
                                 }
                 
                                 img:hover {
                                     animation: gradient-animation-in .5s ease;
-                                    -webkit-filter: grayscale(0%);
-                                    transform: scale(105%);
+                                    filter: grayscale(0%);
+                                    transform: scale(1.05);
                                 }
                             }
             
@@ -2286,14 +2503,14 @@ overflow-x: hidden;
     
                         img {
                             width: 100%;
-                            -webkit-filter: grayscale(100%);
+                            filter: grayscale(100%);
                             animation: gradient-animation-out .5s ease;
                         }
         
                         img:hover {
                             animation: gradient-animation-in .5s ease;
-                            -webkit-filter: grayscale(0%);
-                            transform: scale(105%);
+                            filter: grayscale(0%);
+                            transform: scale(1.05);
                         }
                     }
     
@@ -2543,7 +2760,7 @@ overflow-x: hidden;
       
                   button:hover {
                     animation: gradient-animation-in .5s ease;
-                    transform: scale(105%);
+                    transform: scale(1.05);
                   }
       
                   a:nth-child(1) {
@@ -2738,7 +2955,7 @@ overflow-x: hidden;
 
             button:hover {
               animation: gradient-animation-in .5s ease;
-              transform: scale(105%);
+              transform: scale(1.05);
             }
 
             a:nth-child(2) {
@@ -2828,14 +3045,14 @@ overflow-x: hidden;
 
               img {
                   width: 100%;
-                  -webkit-filter: grayscale(100%);
+                  filter: grayscale(100%);
                   animation: gradient-animation-out .5s ease;
               }
 
               img:hover {
                   animation: gradient-animation-in .5s ease;
-                  -webkit-filter: grayscale(0%);
-                  transform: scale(105%);
+                  filter: grayscale(0%);
+                  transform: scale(1.05);
               }
             }
 
@@ -3014,14 +3231,14 @@ overflow-x: hidden;
   
                       img {
                           width: 100%;
-                          -webkit-filter: grayscale(100%);
+                          filter: grayscale(100%);
                           animation: gradient-animation-out .5s ease;
                       }
       
                       img:hover {
                           animation: gradient-animation-in .5s ease;
-                          -webkit-filter: grayscale(0%);
-                          transform: scale(105%);
+                          filter: grayscale(0%);
+                          transform: scale(1.05);
                       }
                   }
   
@@ -3294,14 +3511,14 @@ overflow-x: hidden;
           
                               img {
                                   width: 100%;
-                                  -webkit-filter: grayscale(100%);
+                                  filter: grayscale(100%);
                                   animation: gradient-animation-out .5s ease;
                               }
               
                               img:hover {
                                   animation: gradient-animation-in .5s ease;
-                                  -webkit-filter: grayscale(0%);
-                                  transform: scale(105%);
+                                  filter: grayscale(0%);
+                                  transform: scale(1.05);
                               }
                           }
           
@@ -3608,11 +3825,11 @@ overflow-x: hidden;
           justify-content: space-between;
 
           .gauche {
-              width: 25%;
+            width: 25%;
           }
 
           .droite {
-              width: 65%;
+            width: 65%;
           }
         }
 
@@ -3642,7 +3859,7 @@ overflow-x: hidden;
         }
 
         .cta {
-          width: 40%;
+          width: 50%;
 
           @include desktop {
             width: 12%;
