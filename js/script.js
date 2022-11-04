@@ -1,6 +1,6 @@
 "use strict"
 
-// TODO --------------------CURSOR & SCROLLBAR--------------------
+// TODO --------------------SCROLLBAR--------------------
 
 let mouseCursor = document.querySelector(".cursor");
 
@@ -14,18 +14,7 @@ function cursor(e) {
     mouseCursor.style.left = e.pageX + 'px';
 }
 
-var className = "inverted";
-var className2 = "bg";
-var scrollTrigger = 1200;
-
 window.onscroll = function() {
-  if (window.scrollY >= scrollTrigger) {
-    document.getElementsByClassName("cursor")[0].classList.add(className);
-    document.getElementsByClassName("cursor")[0].classList.add(className2);
-  } else {
-    document.getElementsByClassName("cursor")[0].classList.remove(className);
-    document.getElementsByClassName("cursor")[0].classList.remove(className2);
-  }
   let progressHeight = (window.pageYOffset / TotalHeight) * 100;
   progress.style.height = getScrollPercent() + "%";
 };
@@ -38,4 +27,4 @@ function getScrollPercent() {
 return (h[st]) / ((h[sh]) - h.clientHeight) * 100;
 }
 
-// TODO --------------------CURSOR & SCROLLBAR--------------------
+// TODO --------------------SCROLLBAR--------------------
