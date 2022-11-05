@@ -17,7 +17,6 @@
     display: flex;
     position: absolute;
     transform: translate(-50%, -50%);
-    pointer-events: none;
     z-index: 100;
     transform: rotate(-30deg);
   }
@@ -445,41 +444,6 @@ footer .bas .bwp {
   }
 }
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 4rem;
-  position: fixed;
-  inset: 0;
-  background-color: #FDF6F8;
-  background-image: url(../images/noise.svg);
-  border-top: solid 5px #191919;
-  pointer-events: none;
-  height: 100Vh;
-  width: 100%;
-  z-index: 10;
-  cursor: pointer;
-}
-.loading .logo {
-  aspect-ratio: 1/1;
-  z-index: 20;
-  transition: all 0.2s ease-in-out;
-}
-.loading .logo img:nth-child(1) {
-  z-index: 15;
-  width: 40vh;
-  position: absolute;
-}
-.loading .logo img:nth-child(2) {
-  width: 40vh;
-}
-.loading .logo .size {
-  width: 100%;
-  transform: scale(20);
-}
-
 body {
   height: 100%;
   margin: 0;
@@ -624,6 +588,7 @@ body {
   }
 }
 .perso .img .logo {
+  z-index: 5;
   display: flex;
   position: relative;
   margin-bottom: 30px;
@@ -694,7 +659,6 @@ body {
   margin-top: 30px;
   width: 250px;
   border: 1px solid #191919;
-  z-index: -2;
 }
 @media (min-width: 800px) {
   .perso .img .card {
@@ -740,6 +704,7 @@ body {
   }
   .perso .img .card .image img {
     width: 100%;
+    filter: grayscale(100%);
     -webkit-animation: gradient-animation-out 0.5s ease;
             animation: gradient-animation-out 0.5s ease;
     border-bottom: 1px #191919 solid;
@@ -747,6 +712,7 @@ body {
   .perso .img .card .image img:hover {
     -webkit-animation: gradient-animation-in 0.3s ease;
             animation: gradient-animation-in 0.3s ease;
+    filter: grayscale(0%);
     transform: scale(1.05);
   }
 }
@@ -829,6 +795,7 @@ body {
   }
 }
 .perso .img .card .image .flou .bas button {
+  z-index: 10;
   margin-top: -5px;
   border: #191919 solid 1px;
   width: 20px;
