@@ -10,6 +10,10 @@
   cursor: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 $colors :(noir:#191919,
   gris:grey,
   input:#F2EFEF,
@@ -49,6 +53,29 @@ $desktop :800px;
   width: 0;
 }
 
+// * -------------------------FADE-------------------------
+
+.fade-in {
+  animation: fadeIn 5s;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 2s;
+}
+
+.fade-in-right {
+  animation: fadeInRight 2s;
+}
+
+.fade-in-top {
+  animation: fadeInTop 2s;
+}
+
+.fade-in-bottom {
+  animation: fadeInBottom 2s;
+}
+
+// * -------------------------FADE-------------------------
 // ? -------------------------SCROLL-------------------------
 
 .scroll {
@@ -143,6 +170,60 @@ $desktop :800px;
     transform: rotate(720deg);
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 // ! -------------------------KEYFRAME-------------------------
 // TODO -------------------------HEADER-------------------------
