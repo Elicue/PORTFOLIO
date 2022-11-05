@@ -39,7 +39,6 @@ $desktop :800px;
     display: flex;
     position: absolute;
     transform: translate(-50%, -50%);
-    pointer-events: none;
     z-index: 100;
     transform: rotate(-30deg);
   }
@@ -468,49 +467,6 @@ footer {
 }
 
 // * -------------------------FOOTER-------------------------
-// ? -------------------------LOADING-------------------------
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 4rem;
-  position: fixed;
-  inset: 0;
-  background-color: color(blanc);
-  background-image: url(../images/noise.svg);
-  border-top: solid 5px color(noir);
-  pointer-events: none;
-  height: 100Vh;
-  width: 100%;
-  z-index: 10;
-  cursor: pointer;
-
-  .logo {
-    aspect-ratio: 1/1;
-    z-index: 20;
-    transition: all .2s ease-in-out;
-
-    img:nth-child(1) {
-      z-index: 15;
-      width: 40vh;
-      position: absolute;
-    }
-
-    img:nth-child(2) {
-      width: 40vh;
-      // animation: loading-spin 5s infinite ease;
-    }
-  }
-
-  .logo .size {
-    width: 100%;
-    transform: scale(20);
-  }
-}
-
-// ? -------------------------LOADING-------------------------
 // TODO -------------------------BODY-------------------------
 
 body {
@@ -673,6 +629,7 @@ body {
     }
 
     .logo {
+      z-index: 5;
       display: flex;
       position: relative;
       margin-bottom: 30px;
@@ -745,7 +702,6 @@ body {
       margin-top: 30px;
       width: 250px;
       border: 1px solid color(noir);
-      z-index: -2;
       // background-color: #fff;
 
       @include desktop {
@@ -792,14 +748,14 @@ body {
 
           img {
             width: 100%;
-            // filter: grayscale(100%);
+            filter: grayscale(100%);
             animation: gradient-animation-out .5s ease;
             border-bottom: $border-height color(noir) solid;
           }
 
           img:hover {
             animation: gradient-animation-in .3s ease;
-            // filter: grayscale(0%);
+            filter: grayscale(0%);
             transform: scale(1.05);
           }
         }
@@ -881,6 +837,7 @@ body {
             }
 
             button {
+              z-index: 10;
               margin-top: -5px;
               border: color(noir) solid $border-height;
               width: 20px;
