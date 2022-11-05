@@ -863,7 +863,6 @@ body {
 .perso .img .card .desc .gauche p {
   font-size: 10px;
   color: grey;
-  margin-top: -5px;
 }
 @media (min-width: 800px) {
   .perso .img .card .desc .gauche p {
@@ -878,7 +877,7 @@ body {
 @media (min-width: 800px) {
   .perso .img .card .desc .gauche h3 {
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }
 .perso .img .card .desc .droite button {
@@ -1503,11 +1502,11 @@ body {
   margin-top: 90px;
   display: flex;
   justify-content: center;
-  margin-left: 150px;
+  margin-left: 20%;
 }
 .projet .droite .cta svg {
   position: absolute;
-  margin-left: -150px;
+  margin-left: -16.5%;
   margin-top: 30px;
 }
 .projet .droite .cta .cercle {
@@ -1520,7 +1519,8 @@ body {
   width: 156px;
   height: 156px;
   position: absolute;
-  margin-top: -28px;
+  margin-top: -2%;
+  margin-left: -1.7%;
 }
 
 .plus {

@@ -908,24 +908,24 @@ body {
                 justify-content: space-between;
 
                 p {
-                    font-size: 10px;
-                    color: color(gris);
-                    margin-top: -5px;
-                    
-                    @include desktop {
-                        font-size: 15px;
-                    }
+                  font-size: 10px;
+                  color: color(gris);
+                  // margin-top: -5px;
+                  
+                  @include desktop {
+                    font-size: 15px;
+                  }
                 }
 
                 h3 {
-                    font-size: 12px;
-                    text-transform: uppercase;
-                    margin-top: 5px;
+                  font-size: 12px;
+                  text-transform: uppercase;
+                  margin-top: 5px;
 
-                    @include desktop {
-                        text-transform: uppercase;
-                        margin-top: 10px;
-                    }
+                  @include desktop {
+                      text-transform: uppercase;
+                      margin-top: 20px;
+                  }
                 }
             }
 
@@ -1611,11 +1611,11 @@ body {
         margin-top: 90px;
         display: flex;
         justify-content: center;
-        margin-left: 150px;
+        margin-left: 20%;
         
         svg {
           position: absolute;
-          margin-left: -150px;
+          margin-left: -16.5%;
           margin-top: 30px;
         }
 
@@ -1630,7 +1630,8 @@ body {
           width: 156px;
           height: 156px;
           position: absolute;
-          margin-top: -28px;
+          margin-top: -2%;
+          margin-left: -1.7%;
         }
 
     }
@@ -1725,6 +1726,9 @@ margin-top: 50px;
 }
 
 // *  -------------------------PLUS-------------------------
+// ?  -------------------------SKILLS-------------------------
+
+// ?  -------------------------SKILLS-------------------------
 // TODO -------------------------BODY-------------------------
 // ! ---------------------------ACCUEIL---------------------------
 // TODO -----------------------PROJET-----------------------------
