@@ -245,7 +245,7 @@ footer {
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-top: -120px;
+  margin-top: 50px;
   background-color: #fff;
 
   @include desktop {
@@ -1679,7 +1679,6 @@ margin-top: 50px;
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
-  margin-bottom: 100px;
 
   .cta {
       display: flex;
@@ -1733,20 +1732,19 @@ margin-top: 50px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  height: 90vh;
   justify-content: space-between;
 
   .oh {
     width: 100%;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    height: 90%;
     justify-content: space-between;
 
     .titre {
       h2 {
         -webkit-text-stroke: $border-height color(noir);
-        font-size: 90px;
+        font-size: 50px;
         text-transform: uppercase;
 
         span {
@@ -1756,26 +1754,40 @@ margin-top: 50px;
     }
 
     .content {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 75%;
 
       .ah {
-        display: flex;
-        flex-direction: row;
         width: 100%;
-        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
 
         .skills {
+          width: 100%;
           display: flex;
-          flex-direction: row;
-          width: 60%;
+          flex-direction: column;
           justify-content: space-between;
+          height: 60vh;
+
+          .first {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            margin: auto;
+          }
+
+          .second {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            margin: auto;
+          }
 
           .card {
-            width: 23%;
+            width: 45%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -1798,14 +1810,6 @@ margin-top: 50px;
               img {
                 width: 50%;
                 margin: auto;
-                filter: grayscale(100%);
-                animation: gradient-animation-out .5s ease;
-              }
-
-              img:hover {
-                  animation: gradient-animation-in .3s ease;
-                  filter: grayscale(0%);
-                  transform: scale(1.05);
               }
             }
 
@@ -1824,21 +1828,15 @@ margin-top: 50px;
               button {
                 background-color: color(noir);
                 padding: 0.5em 1em;
-                animation: gradient-animation-out .5s ease;
                 border: none;
                 color: #fff;
               }
-
-              button:hover {
-                animation: gradient-animation-in .5s ease;
-                transform: scale(1.05);
-            }
             }
           }
         }
 
         .txt {
-          width: 38%;
+          width: 100%;
           border-left: color(noir) solid $border-height;
           height: 100%;
           display: flex;
@@ -1847,12 +1845,12 @@ margin-top: 50px;
           p {
             font-size: 20px;
             padding-left: 25px;
-            width: 80%;
+            width: 100%;
           }
         }
 
         .oui {
-          width: 38%;
+          width: 100%;
           border-right: color(noir) solid $border-height;
           border-left: none;
           height: 100%;
@@ -1865,6 +1863,167 @@ margin-top: 50px;
             padding-right: 25px;
             padding-left: 0;
             text-align: right;
+          }
+        }
+      }
+
+      .ah:nth-child(2) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  @include desktop{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-between;
+
+    .oh {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 90%;
+      justify-content: space-between;
+
+      .titre {
+        h2 {
+          -webkit-text-stroke: $border-height color(noir);
+          font-size: 90px;
+          text-transform: uppercase;
+
+          span {
+            color: color(primary);
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 75%;
+
+        .ah {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+
+          .skills {
+            display: flex;
+            flex-direction: row;
+            width: 60%;
+            justify-content: space-between;
+            height: 100%;
+
+            .first {
+              width: 45%;
+              display: flex;
+              flex-direction: row;
+            }
+
+            .second {
+              width: 45%;
+              display: flex;
+              flex-direction: row;
+            }
+
+            .card {
+              width: 46%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              border: color(noir) solid $border-height;
+              align-items: center;
+              height: 25vh;
+
+              .titre {
+                h3 {
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  font-size: 20px;
+                }
+              }
+
+              .content {
+                width: 90%;
+                height: 12vh;
+                
+                img {
+                  width: 50%;
+                  margin: auto;
+                  filter: grayscale(100%);
+                  animation: gradient-animation-out .5s ease;
+                }
+
+                img:hover {
+                    animation: gradient-animation-in .3s ease;
+                    filter: grayscale(0%);
+                    transform: scale(1.05);
+                }
+              }
+
+              .desc {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-around;
+
+                a {
+                  font-size: 12px;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                }
+
+                button {
+                  background-color: color(noir);
+                  padding: 0.5em 1em;
+                  animation: gradient-animation-out .5s ease;
+                  border: none;
+                  color: #fff;
+                }
+
+                button:hover {
+                  animation: gradient-animation-in .5s ease;
+                  transform: scale(1.05);
+              }
+              }
+            }
+          }
+
+          .txt {
+            width: 38%;
+            border-left: color(noir) solid $border-height;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            p {
+              font-size: 20px;
+              padding-left: 25px;
+              width: 80%;
+            }
+          }
+
+          .oui {
+            width: 38%;
+            border-right: color(noir) solid $border-height;
+            border-left: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+
+            p {
+              font-size: 20px;
+              padding-right: 25px;
+              padding-left: 0;
+              text-align: right;
+            }
           }
         }
       }
@@ -3292,7 +3451,7 @@ overflow-x: hidden;
       display: flex;
       flex-direction: column;
       margin-top: -100px;
-      margin-bottom: 70px;
+      margin-bottom: -70px;
 
       @include desktop {
           width: 90%;
@@ -3908,7 +4067,6 @@ overflow-x: hidden;
 
       .form {
         margin-top: 50px;
-        margin-bottom: 170px;
         width: 100%;
         display: flex;
         flex-direction: column;

@@ -238,7 +238,7 @@ footer {
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-top: -120px;
+  margin-top: 50px;
   background-color: #fff;
 }
 @media (min-width: 800px) {
@@ -1558,7 +1558,6 @@ body {
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
-  margin-bottom: 100px;
 }
 .plus .bas .cta {
   display: flex;
@@ -1600,45 +1599,56 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  height: 90vh;
   justify-content: space-between;
 }
 .skl .oh {
   width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  height: 90%;
   justify-content: space-between;
 }
 .skl .oh .titre h2 {
   -webkit-text-stroke: 1px #191919;
-  font-size: 90px;
+  font-size: 50px;
   text-transform: uppercase;
 }
 .skl .oh .titre h2 span {
   color: #e8c9c4;
 }
 .skl .oh .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.skl .oh .content .ah {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.skl .oh .content .ah .skills {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  height: 75%;
+  height: 60vh;
 }
-.skl .oh .content .ah {
+.skl .oh .content .ah .skills .first {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  margin: auto;
 }
-.skl .oh .content .ah .skills {
+.skl .oh .content .ah .skills .second {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 100%;
   justify-content: space-between;
+  margin: auto;
 }
 .skl .oh .content .ah .skills .card {
-  width: 23%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1658,15 +1668,6 @@ body {
 .skl .oh .content .ah .skills .card .content img {
   width: 50%;
   margin: auto;
-  filter: grayscale(100%);
-  -webkit-animation: gradient-animation-out 0.5s ease;
-          animation: gradient-animation-out 0.5s ease;
-}
-.skl .oh .content .ah .skills .card .content img:hover {
-  -webkit-animation: gradient-animation-in 0.3s ease;
-          animation: gradient-animation-in 0.3s ease;
-  filter: grayscale(0%);
-  transform: scale(1.05);
 }
 .skl .oh .content .ah .skills .card .desc {
   display: flex;
@@ -1682,18 +1683,11 @@ body {
 .skl .oh .content .ah .skills .card .desc button {
   background-color: #191919;
   padding: 0.5em 1em;
-  -webkit-animation: gradient-animation-out 0.5s ease;
-          animation: gradient-animation-out 0.5s ease;
   border: none;
   color: #fff;
 }
-.skl .oh .content .ah .skills .card .desc button:hover {
-  -webkit-animation: gradient-animation-in 0.5s ease;
-          animation: gradient-animation-in 0.5s ease;
-  transform: scale(1.05);
-}
 .skl .oh .content .ah .txt {
-  width: 38%;
+  width: 100%;
   border-left: #191919 solid 1px;
   height: 100%;
   display: flex;
@@ -1702,10 +1696,10 @@ body {
 .skl .oh .content .ah .txt p {
   font-size: 20px;
   padding-left: 25px;
-  width: 80%;
+  width: 100%;
 }
 .skl .oh .content .ah .oui {
-  width: 38%;
+  width: 100%;
   border-right: #191919 solid 1px;
   border-left: none;
   height: 100%;
@@ -1718,6 +1712,146 @@ body {
   padding-right: 25px;
   padding-left: 0;
   text-align: right;
+}
+.skl .oh .content .ah:nth-child(2) {
+  margin-top: 50px;
+}
+@media (min-width: 800px) {
+  .skl {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-between;
+  }
+  .skl .oh {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+  }
+  .skl .oh .titre h2 {
+    -webkit-text-stroke: 1px #191919;
+    font-size: 90px;
+    text-transform: uppercase;
+  }
+  .skl .oh .titre h2 span {
+    color: #e8c9c4;
+  }
+  .skl .oh .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 75%;
+  }
+  .skl .oh .content .ah {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .skl .oh .content .ah .skills {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .skl .oh .content .ah .skills .first {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+  }
+  .skl .oh .content .ah .skills .second {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+  }
+  .skl .oh .content .ah .skills .card {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: #191919 solid 1px;
+    align-items: center;
+    height: 25vh;
+  }
+  .skl .oh .content .ah .skills .card .titre h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .skl .oh .content .ah .skills .card .content {
+    width: 90%;
+    height: 12vh;
+  }
+  .skl .oh .content .ah .skills .card .content img {
+    width: 50%;
+    margin: auto;
+    filter: grayscale(100%);
+    -webkit-animation: gradient-animation-out 0.5s ease;
+            animation: gradient-animation-out 0.5s ease;
+  }
+  .skl .oh .content .ah .skills .card .content img:hover {
+    -webkit-animation: gradient-animation-in 0.3s ease;
+            animation: gradient-animation-in 0.3s ease;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+  .skl .oh .content .ah .skills .card .desc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .skl .oh .content .ah .skills .card .desc a {
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .skl .oh .content .ah .skills .card .desc button {
+    background-color: #191919;
+    padding: 0.5em 1em;
+    -webkit-animation: gradient-animation-out 0.5s ease;
+            animation: gradient-animation-out 0.5s ease;
+    border: none;
+    color: #fff;
+  }
+  .skl .oh .content .ah .skills .card .desc button:hover {
+    -webkit-animation: gradient-animation-in 0.5s ease;
+            animation: gradient-animation-in 0.5s ease;
+    transform: scale(1.05);
+  }
+  .skl .oh .content .ah .txt {
+    width: 38%;
+    border-left: #191919 solid 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .skl .oh .content .ah .txt p {
+    font-size: 20px;
+    padding-left: 25px;
+    width: 80%;
+  }
+  .skl .oh .content .ah .oui {
+    width: 38%;
+    border-right: #191919 solid 1px;
+    border-left: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  .skl .oh .content .ah .oui p {
+    font-size: 20px;
+    padding-right: 25px;
+    padding-left: 0;
+    text-align: right;
+  }
 }
 
 .projets {
@@ -3040,7 +3174,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: -100px;
-  margin-bottom: 70px;
+  margin-bottom: -70px;
 }
 @media (min-width: 800px) {
   .projets main .centre:nth-child(4) {
@@ -3612,7 +3746,6 @@ body {
 }
 .contact main .form {
   margin-top: 50px;
-  margin-bottom: 170px;
   width: 100%;
   display: flex;
   flex-direction: column;
