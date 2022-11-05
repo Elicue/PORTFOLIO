@@ -3967,11 +3967,11 @@ body {
           flex-direction: column;
 
           @include desktop {
-            margin-top: -10px;
+            margin-top: -110px;
             width: 50%;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            height: 120%;
             justify-content: space-between;
           }
 
@@ -4076,6 +4076,7 @@ body {
             color: color(gris);
             width: 90%;
             margin: auto;
+            font-size: 18px;
 
             @include desktop {
               border-left: $border-height color(noir) solid;
@@ -4094,7 +4095,7 @@ body {
     }
 
     .form {
-      margin-top: 50px;
+      margin-top: 100px;
       width: 100%;
       display: flex;
       flex-direction: column;
