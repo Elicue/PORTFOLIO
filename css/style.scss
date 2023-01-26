@@ -17,6 +17,7 @@ html {
 $colors :(noir:#191919,
   gris:grey,
   input:#F2EFEF,
+  // primary:#CC3333,
   primary:#e8c9c4,
   secondary:#faecea,
   blanc: #FDF6F8,
@@ -1831,7 +1832,7 @@ body {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          height: 60vh;
+          height: 90vh;
 
           .first {
             display: flex;
@@ -1842,6 +1843,14 @@ body {
           }
 
           .second {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            margin: auto;
+          }
+
+          .third {
             display: flex;
             flex-direction: row;
             width: 100%;

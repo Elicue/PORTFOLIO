@@ -1743,7 +1743,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 60vh;
+  height: 90vh;
 }
 .skl .oh .content .ah .skills .first {
   display: flex;
@@ -1753,6 +1753,13 @@ body {
   margin: auto;
 }
 .skl .oh .content .ah .skills .second {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin: auto;
+}
+.skl .oh .content .ah .skills .third {
   display: flex;
   flex-direction: row;
   width: 100%;
